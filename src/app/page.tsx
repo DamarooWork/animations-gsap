@@ -1,3 +1,3 @@
 export default function Home() {
-  return <>123</>
+  return <h1 className="text-2xl">Hello Next.js!</h1>
 }
