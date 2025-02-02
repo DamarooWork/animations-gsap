@@ -7,8 +7,9 @@ import SecondBox from './components/main/SecondBox'
 import Image from 'next/image'
 import arrowDown from '../../public/icons/arrowDown.png'
 export default function Home() {
-  const [show, setShow] = useState(window.scrollY)
+  const [show, setShow] = useState(0)
   useEffect(() => {
+    setShow(window.scrollY)
     window.addEventListener('scroll', () => setShow(window.scrollY))
     return () => {
       window.removeEventListener('scroll', () => setShow(window.scrollY))
@@ -26,7 +27,7 @@ export default function Home() {
           className="flex flex-col items-center text-2xl fixed top-[90vh] 
         left-[50%] translate-x-[-50%]"
         >
-          <p>Scroll down!</p>
+          <p>Scroll down</p>
           <Image className="w-6" src={arrowDown} alt="arrow down"></Image>
         </section>
       ) : null}

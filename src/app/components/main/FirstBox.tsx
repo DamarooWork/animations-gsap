@@ -11,7 +11,6 @@ export default function FirstBox() {
       scrollTrigger: {
         trigger: firstElem.current,
         toggleActions: 'play pause reverse pause',
-        markers: true,
       },
       y: -200,
       rotation: 360,
