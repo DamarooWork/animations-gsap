@@ -1,3 +1,11 @@
+import Link from 'next/link'
+import Header from './components/header/Header'
+
 export default function Home() {
-  return <h1 className="text-2xl">Hello Next.js!</h1>
+  return (
+    <>
+     <Header/>
+     <Link className='absolute top-10 right-10' href={`/blog`}>Go to Blog page</Link>
+    </>
+  )
 }

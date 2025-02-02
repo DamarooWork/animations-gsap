@@ -6,7 +6,7 @@ export default async function Page() {
   console.log(posts)
 
   return (
-    <ul className="flex flex-col gap-5 p-10">
+    <ul className="flex flex-col gap-5 p-10 text-center">
       {posts.map((post: IPost) => (
         <li key={post.id}>
           <Post post={post} />
