@@ -1,4 +1,4 @@
 'use client'
 export default function Page() {
-  return <h1>Blog's page</h1>
+  return <h1>Blogs page</h1>
 }
