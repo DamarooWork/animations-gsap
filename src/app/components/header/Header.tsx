@@ -2,9 +2,7 @@
 import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { TextPlugin } from 'gsap/TextPlugin'
 
-gsap.registerPlugin(useGSAP, TextPlugin)
 gsap.registerPlugin(useGSAP)
 export default function Header() {
   const headerText = useRef<HTMLHeadingElement>(null)
