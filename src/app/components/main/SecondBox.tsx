@@ -18,10 +18,13 @@ export default function SecondBox() {
     })
   }, {})
   return (
-    <section className="mt-[90vh]">
+    <section
+      ref={secondElem}
+      id="secondElem"
+      className="mt-[90vh] flex justify-center"
+    >
       <p
-        ref={secondElem}
-        className="text-center w-28 m-auto border-red-400 
+        className="text-center w-28  border-red-400 
         border-4 rounded-2xl px-4 py-2 will-change-transform"
       >
         Ну а я второй!
