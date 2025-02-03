@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { TextPlugin } from "gsap/TextPlugin";
+import { TextPlugin } from 'gsap/TextPlugin'
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 export default function FirstBox() {
   const firstElem = useRef<HTMLParagraphElement>(null)
@@ -18,7 +18,6 @@ export default function FirstBox() {
           endTrigger: '#secondElem',
           scrub: 3,
           pin: true,
-          // markers: true,
         },
       })
       tl.to(firstElem.current, {
@@ -39,6 +38,23 @@ export default function FirstBox() {
         rotation: '+=720',
         ease: 'power3.inOut',
       })
+      tl.to('#aufSpan', {
+        duration: 2,
+        text: 'Double AUF!',
+        ease: 'power1.inOut',
+      })
+
+      tl.to('#meowSpan', {
+        duration: 2,
+        text: 'MEEEEOOOOW!',
+        ease: 'power1.inOut',
+      })
+
+      tl.to('#kryaSpan', {
+        duration: 2,
+        text: 'KRYAAAAA!',
+        ease: 'power1.inOut',
+      })
     },
     { scope: firstElem }
   )
@@ -53,6 +69,7 @@ export default function FirstBox() {
         border-2 rounded-full p-10 will-change-transform "
       >
         <span
+          id="meowSpan"
           className="absolute top-[50%] left-[50%] translate-x-[-50%]
         translate-y-[-50%]"
         >
@@ -64,6 +81,7 @@ export default function FirstBox() {
         border-2 rounded-full p-10 will-change-transform "
       >
         <span
+          id="aufSpan"
           className="absolute top-[50%] left-[50%] translate-x-[-50%]
         translate-y-[-50%]"
         >
@@ -75,6 +93,7 @@ export default function FirstBox() {
         border-2 rounded-full p-10 will-change-transform "
       >
         <span
+          id="kryaSpan"
           className="absolute top-[50%] left-[50%] translate-x-[-50%]
         translate-y-[-50%]"
         >

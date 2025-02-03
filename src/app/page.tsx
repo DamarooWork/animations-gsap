@@ -20,17 +20,21 @@ export default function Home() {
     <>
       <FirstBox />
       <SecondBox />
-      <ThirdBox/>
+      <ThirdBox />
       <Link className="absolute top-10 right-10" href={`/blog`}>
         Go to Blog page
       </Link>
       {show < 300 ? (
         <section
-          className="flex flex-col items-center text-2xl fixed top-[90vh] 
+          className="flex flex-col items-center gap-2 text-2xl fixed top-[90vh] 
         left-[50%] translate-x-[-50%]"
         >
           <p>Scroll down</p>
-          <Image className="w-6" src={arrowDown} alt="arrow down"></Image>
+          <Image
+            className="w-6 animate-bounce"
+            src={arrowDown}
+            alt="arrow down"
+          ></Image>
         </section>
       ) : null}
     </>

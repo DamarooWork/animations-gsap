@@ -12,7 +12,7 @@ export default function Header() {
       color: 'green',
       duration: 3,
       repeat: -1,
-      ease: 'power1.inOut',
+      ease: 'power2.inOut',
       yoyo: true,
     })
   }, {})
