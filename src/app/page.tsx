@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import SecondBox from './components/main/SecondBox'
 import Image from 'next/image'
 import arrowDown from '../../public/icons/arrowDown.png'
+import ThirdBox from './components/main/ThirdBox'
 export default function Home() {
   const [show, setShow] = useState(0)
   useEffect(() => {
@@ -19,6 +20,7 @@ export default function Home() {
     <>
       <FirstBox />
       <SecondBox />
+      <ThirdBox/>
       <Link className="absolute top-10 right-10" href={`/blog`}>
         Go to Blog page
       </Link>

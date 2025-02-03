@@ -4,36 +4,36 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(useGSAP, ScrollTrigger)
-export default function SecondBox() {
-  const secondElem = useRef<HTMLElement>(null)
+export default function ThirdBox() {
+  const thirdElem = useRef<HTMLElement>(null)
 
   useGSAP(
     () => {
-      const sections = gsap.utils.toArray('.panel')
-      console.log(secondElem, sections)
+      const sections = gsap.utils.toArray('.thirdPanel')
+      console.log(thirdElem, sections)
 
       gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
+        xPercent: 100 * (sections.length - 1),
         ease: 'none',
         scrollTrigger: {
-          trigger: secondElem.current,
+          trigger: thirdElem.current,
           pin: true,
           scrub: 1,
           snap: 1 / (sections.length - 1),
-          end: () => '+=' + secondElem.current?.offsetWidth,
+          end: () => '+=' + thirdElem.current?.offsetWidth,
         },
       })
     },
-    { scope: secondElem }
+    { scope: thirdElem }
   )
   return (
     <section
-      ref={secondElem}
-      id="secondElem"
-      className="mt-[50vh] flex  h-[100vh]"
+      ref={thirdElem}
+      id="thirdElem"
+      className=" flex flex-row-reverse  h-[100vh]"
     >
       <article
-        className="panel flex justify-center items-center
+        className="thirdPanel flex justify-center items-center
        text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-orange-500"
       >
         <p>
@@ -42,7 +42,7 @@ export default function SecondBox() {
         </p>
       </article>
       <article
-        className="panel flex justify-center items-center
+        className="thirdPanel flex justify-center items-center
        text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-violet-500"
       >
         <p>
@@ -51,7 +51,7 @@ export default function SecondBox() {
         </p>
       </article>
       <article
-        className="panel flex justify-center items-center
+        className="thirdPanel flex justify-center items-center
        text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-red-500"
       >
         <p>
@@ -60,7 +60,7 @@ export default function SecondBox() {
         </p>
       </article>
       <article
-        className="panel flex justify-center items-center
+        className="thirdPanel flex justify-center items-center
        text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-blue-500"
       >
         <p>

@@ -10,7 +10,7 @@ export default function DashboardLayout({
     <html lang="en">
       <body>
         <Header />
-        <main className="mt-20 mb-20">{children}</main>
+        <main className="mt-20 ">{children}</main>
       </body>
     </html>
   )

@@ -6,27 +6,30 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 export default function FirstBox() {
   const firstElem = useRef<HTMLParagraphElement>(null)
-  useGSAP(() => {
-    gsap.to(firstElem.current, {
-      scrollTrigger: {
-        trigger: firstElem.current,
-        toggleActions: 'play pause reverse pause',
-        start: '50% 50%',
-        end: 'bottom 20%',
-        endTrigger: '#secondElem',
-        scrub: 1,
-        pin: true,
-        markers: true,
-      },
-      x: -600,
-      rotation: 720,
-      ease: 'power2.inOut',
-    })
-  }, {})
+  useGSAP(
+    () => {
+      gsap.to(firstElem.current, {
+        scrollTrigger: {
+          trigger: firstElem.current,
+          toggleActions: 'play pause reverse pause',
+          start: '50% 50%',
+          end: 'bottom 20%',
+          endTrigger: '#secondElem',
+          scrub: 3,
+          pin: true,
+          markers: true,
+        },
+        x: -600,
+        rotation: 720,
+        ease: 'power1.inOut',
+      })
+    },
+    { scope: firstElem }
+  )
   return (
     <section
       ref={firstElem}
-      className="mt-[120vh] flex gap-10 justify-center items-center  m-auto"
+      className="mt-[120vh] flex gap-10 justify-center items-center"
     >
       <p
         className="relative text-center w-48 h-48  border-red-400 
