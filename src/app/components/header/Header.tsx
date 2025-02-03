@@ -17,10 +17,10 @@ export default function Header() {
     })
   }, {})
   return (
-    <header className="mt-40  w-full ">
+    <header className="  w-full h-[100vh] flex justify-center items-center ">
       <h1
         ref={headerText}
-        className="text-6xl m-auto max-w-[600px] text-center will-change-transform"
+        className="text-6xl text-center will-change-transform"
       >
         Welcome to animated world!
       </h1>

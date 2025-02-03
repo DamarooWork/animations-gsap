@@ -17,7 +17,7 @@ export default function FirstBox() {
           endTrigger: '#secondElem',
           scrub: 3,
           pin: true,
-          markers: true,
+          // markers: true,
         },
         x: -600,
         rotation: 720,
@@ -29,7 +29,7 @@ export default function FirstBox() {
   return (
     <section
       ref={firstElem}
-      className="mt-[120vh] flex gap-10 justify-center items-center"
+      className="mt-[50vh] flex gap-10 justify-center items-center"
     >
       <p
         className="relative text-center w-48 h-48  border-red-400 
