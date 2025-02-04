@@ -5,17 +5,20 @@ import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
 
-import yuki1 from '../../../../public/images/yuki/1.jpg'
-
-import yuki2 from '../../../../public/images/yuki/2.jpg'
-import yuki3 from '../../../../public/images/yuki/3.jpg'
-import yuki4 from '../../../../public/images/yuki/4.jpg'
-import yuki5 from '../../../../public/images/yuki/5.jpg'
-import yuki6 from '../../../../public/images/yuki/6.jpg'
-import yuki7 from '../../../../public/images/yuki/7.jpg'
-import yuki8 from '../../../../public/images/yuki/8.jpg'
-import yuki9 from '../../../../public/images/yuki/9.jpg'
-import yuki10 from '../../../../public/images/yuki/10.jpg'
+import img1 from '@/../public/images/thirdBox/1.jpg'
+import img2 from '@/../public/images/thirdBox/2.jpg'
+import img3 from '@/../public/images/thirdBox/3.jpg'
+import img4 from '@/../public/images/thirdBox/4.jpg'
+import img5 from '@/../public/images/thirdBox/5.jpg'
+import img7 from '@/../public/images/thirdBox/7.jpg'
+import img8 from '@/../public/images/thirdBox/8.jpg'
+import img9 from '@/../public/images/thirdBox/9.jpg'
+import img10 from '@/../public/images/thirdBox/10.jpg'
+import img11 from '@/../public/images/thirdBox/11.jpg'
+import img12 from '@/../public/images/thirdBox/12.jpg'
+import img13 from '@/../public/images/thirdBox/13.jpg'
+import img14 from '@/../public/images/thirdBox/14.jpg'
+import img15 from '@/../public/images/thirdBox/15.jpg'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 export default function ThirdBox() {
@@ -35,58 +38,136 @@ export default function ThirdBox() {
           end: () => '+=' + thirdElem.current?.offsetWidth,
         },
       })
-      gsap.to('#img1', {
-        scrollTrigger: {
-          trigger: thirdElem.current,
+      gsap.fromTo(
+        '#img1',
+        {
+          opacity: 0,
+          scale: 0,
         },
-        duration: 3,
-        x: -400,
-        rotateZ: -30,
-        ease: 'power2.inOut',
-      })
-      gsap.to('#img2', {
-        scrollTrigger: {
-          trigger: thirdElem.current,
+        {
+          scrollTrigger: {
+            trigger: thirdElem.current,
+          },
+          scale: 1,
+          opacity: 1,
+          duration: 3,
+          x: -400,
+          rotateZ: -30,
+          ease: 'power2.inOut',
+        }
+      )
+      gsap.fromTo(
+        '#img2',
+        {
+          opacity: 0,
+          scale: 0,
         },
-        duration: 3,
-        x: 400,
-        rotateZ: 30,
-        ease: 'power2.inOut',
-      })
-      gsap.to('#img4', {
+        {
+          scrollTrigger: {
+            trigger: thirdElem.current,
+          },
+          delay: 1,
+          scale: 1,
+          opacity: 1,
+          duration: 3,
+          x: 400,
+          rotateZ: 30,
+          ease: 'power2.inOut',
+        }
+      )
+      let tlCars = gsap.timeline({
         scrollTrigger: {
           trigger: '#img4',
-          start: () => '+=' + window.innerWidth / 4,
+          start: '#img4',
         },
-        duration: 3,
-        x: 400,
-        rotateZ: 40,
-        rotateX: 360,
-        rotateY: 360,
-        ease: 'power2.inOut',
       })
-      gsap.to('#img5', {
+      tlCars.fromTo(
+        '#img4',
+        { opacity: 0, scale: 0.2 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          x: 600,
+          rotateZ: 20,
+          ease: 'power2.inOut',
+        }
+      )
+      tlCars.fromTo(
+        '#img5',
+        { opacity: 0, scale: 0.2 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          x: 300,
+          rotateZ: 10,
+          ease: 'power2.inOut',
+        }
+      )
+      tlCars.fromTo(
+        '#img10',
+        { opacity: 0, scale: 0.2 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          y: -20,
+          ease: 'power2.inOut',
+        }
+      )
+      tlCars.fromTo(
+        '#img11',
+        { opacity: 0, scale: 0.2 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          x: -300,
+          rotateZ: -10,
+          ease: 'power2.inOut',
+        }
+      )
+      tlCars.fromTo(
+        '#img12',
+        { opacity: 0, scale: 0.2 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1,
+          x: -600,
+          rotateZ: -20,
+          ease: 'power2.inOut',
+        }
+      )
+      let tlClouds = gsap.timeline({
         scrollTrigger: {
-          trigger: '#img4',
-          start: () => '+=' + window.innerWidth / 4,
-        },
-        duration: 3,
-        x: -400,
-        rotateZ: -40,
-        rotateX: -360,
-        rotateY: -360,
-        ease: 'power2.inOut',
-      })
-      gsap.to('#img6', {
-        scrollTrigger: {
-          trigger: '#img6',
+          trigger: '#clouds',
           start: () => '+=' + window.innerWidth / 2,
+          markers: true,
+          id: '13',
         },
-        duration: 5,
-        x: -200,
-        rotate: 720,
-
-        ease: 'power3.inOut',
+        ease: 'power1.inOut',
+      })
+      tlClouds.from('#img15', {
+        duration: 1,
+        scale: 0,
+        opacity: 0,
+        x: -400,
+      })
+      tlClouds.from('#img13', {
+        duration: 1,
+        scale: 0,
+        opacity: 0,
+        x: 200,
+        y: 200,
+      })
+      tlClouds.from('#img14', {
+        duration: 1,
+        scale: 0,
+        opacity: 0,
+        x: 200,
+        y: -200,
       })
     },
     { scope: thirdElem }
@@ -104,23 +185,23 @@ export default function ThirdBox() {
         <Image
           id="img1"
           loading="lazy"
-          className="w-auto absolute h-[70vh] object-cover rounded-2xl"
-          src={yuki1}
-          alt="Yuki1"
+          className="w-auto  absolute h-[70vh] object-cover rounded-2xl"
+          src={img1}
+          alt="img1"
         />
         <Image
           id="img2"
           loading="lazy"
           className="w-auto absolute h-[70vh] object-cover rounded-2xl"
-          src={yuki2}
-          alt="Yuki2"
+          src={img2}
+          alt="img2"
         />
         <Image
           id="img3"
           loading="lazy"
           className="w-auto absolute h-[80vh] object-cover rounded-2xl"
-          src={yuki3}
-          alt="Yuki3"
+          src={img3}
+          alt="img3"
         />
       </article>
       <article
@@ -130,43 +211,93 @@ export default function ThirdBox() {
         <Image
           id="img4"
           loading="lazy"
-          className="w-auto absolute max-h-[70vh] object-cover rounded-2xl"
-          src={yuki4}
-          alt="Yuki4"
+          className="w-auto absolute hover:z-50  max-h-[70vh] object-cover rounded-2xl"
+          src={img4}
+          alt="img4"
         />
         <Image
           id="img5"
           loading="lazy"
-          className="w-auto absolute max-h-[70vh] object-cover rounded-2xl"
-          src={yuki5}
-          alt="Yuki5"
+          className="w-auto absolute hover:z-50 max-h-[70vh] object-cover rounded-2xl"
+          src={img5}
+          alt="img5"
+        />
+
+        <Image
+          id="img10"
+          loading="lazy"
+          className="w-auto z-20 absolute hover:z-50 max-h-[70vh] object-cover rounded-2xl"
+          src={img10}
+          alt="img10"
+        />
+        <Image
+          id="img11"
+          loading="lazy"
+          className="w-auto z-10 absolute hover:z-50 max-h-[70vh] object-cover rounded-2xl"
+          src={img11}
+          alt="img11"
+        />
+        <Image
+          id="img12"
+          loading="lazy"
+          className="w-auto absolute hover:z-50 max-h-[70vh] object-cover rounded-2xl"
+          src={img12}
+          alt="img12"
         />
       </article>
       <article
-        className="thirdPanel flex justify-center items-center
-       text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-red-500"
+        id="clouds"
+        className="thirdPanel grid grid-flow-col
+         grid-rows-2 grid-cols-2 
+       text-4xl px-10 py-12 gap-[10vh]  min-w-[100vw] h-[100vh] bg-red-500"
       >
         <Image
-          id="img6"
+          id="img13"
           loading="lazy"
-          className="w-auto max-h-[90vh] object-cover rounded-2xl"
-          src={yuki6}
-          alt="Yuki6"
+          className="w-auto max-h-[40vh] place-self-end  rounded-2xl"
+          src={img13}
+          alt="img13"
+        />
+        <Image
+          id="img14"
+          loading="lazy"
+          className="w-auto max-h-[40vh] place-self-end   rounded-2xl"
+          src={img14}
+          alt="img14"
+        />
+        <Image
+          id="img15"
+          loading="lazy"
+          className="w-auto row-span-2 self-start  max-h-[90vh]  rounded-2xl"
+          src={img15}
+          alt="img15"
         />
       </article>
       <article
-        className="thirdPanel flex justify-center items-center
+        className="thirdPanel flex justify-around items-center
        text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-blue-500"
       >
-        <figure id="img7">
-          <Image
-            loading="lazy"
-            className="w-auto max-h-[80vh] object-cover rounded-2xl"
-            src={yuki7}
-            alt="Yuki7"
-          />
-          <figcaption className="text-center">Юки-чао кушаец</figcaption>
-        </figure>
+        <Image
+          id="img7"
+          loading="lazy"
+          className="w-auto max-h-[80vh] object-cover rounded-2xl"
+          src={img7}
+          alt="img7"
+        />
+        <Image
+          id="img8"
+          loading="lazy"
+          className="w-auto max-h-[80vh] object-cover rounded-2xl"
+          src={img8}
+          alt="img8"
+        />
+        <Image
+          id="img9"
+          loading="lazy"
+          className="w-auto max-h-[80vh] object-cover rounded-2xl"
+          src={img9}
+          alt="img9"
+        />
       </article>
     </section>
   )

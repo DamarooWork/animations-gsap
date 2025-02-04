@@ -16,7 +16,7 @@ export default function FirstBox() {
           start: '50% 50%',
           end: 'bottom 20%',
           endTrigger: '#secondElem',
-          scrub: 3,
+          scrub: 2,
           pin: true,
         },
       })
@@ -38,21 +38,20 @@ export default function FirstBox() {
         rotation: '+=720',
         ease: 'power3.inOut',
       })
-      tl.to('#aufSpan', {
-        duration: 2,
-        text: 'Double AUF!',
-        ease: 'power1.inOut',
-      })
 
       tl.to('#meowSpan', {
         duration: 2,
-        text: 'MEEEEOOOOW!',
+        text: 'Welcome',
         ease: 'power1.inOut',
       })
-
+      tl.to('#aufSpan', {
+        duration: 2,
+        text: 'To',
+        ease: 'power1.inOut',
+      })
       tl.to('#kryaSpan', {
         duration: 2,
-        text: 'KRYAAAAA!',
+        text: 'GSAP!',
         ease: 'power1.inOut',
       })
     },
@@ -62,10 +61,10 @@ export default function FirstBox() {
     <section
       ref={firstElem}
       className="mt-[50vh] flex 
-       gap-10  justify-center items-center "
+       gap-10  justify-center items-center text-orange-300"
     >
       <p
-        className="relative flex-[3, 3, 0%] text-center w-48 h-48  border-red-400 
+        className="relative flex-[3, 3, 0%]  text-center w-48 h-48  border-red-400 
         border-2 rounded-full p-10 will-change-transform "
       >
         <span
@@ -73,7 +72,7 @@ export default function FirstBox() {
           className="absolute top-[50%] left-[50%] translate-x-[-50%]
         translate-y-[-50%]"
         >
-          Meoooow
+          First!
         </span>
       </p>
       <p
@@ -85,7 +84,7 @@ export default function FirstBox() {
           className="absolute top-[50%] left-[50%] translate-x-[-50%]
         translate-y-[-50%]"
         >
-          Auf!
+          Second!
         </span>
       </p>
       <p
@@ -97,7 +96,7 @@ export default function FirstBox() {
           className="absolute top-[50%] left-[50%] translate-x-[-50%]
         translate-y-[-50%]"
         >
-          Krya-krya
+          Third!
         </span>
       </p>
     </section>

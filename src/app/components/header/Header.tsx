@@ -9,8 +9,7 @@ export default function Header() {
   useGSAP(() => {
     gsap.to(headerText.current, {
       scale: '1.1',
-      color: 'green',
-      duration: 3,
+      duration: 2,
       repeat: -1,
       ease: 'power2.inOut',
       yoyo: true,
@@ -20,7 +19,7 @@ export default function Header() {
     <header className="  w-full h-[100vh] flex justify-center items-center ">
       <h1
         ref={headerText}
-        className="text-6xl text-center will-change-transform"
+        className="text-6xl text-orange-400 text-center will-change-transform"
       >
         Welcome to animated world!
       </h1>
