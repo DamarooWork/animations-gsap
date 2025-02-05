@@ -111,7 +111,7 @@ export default function SecondBox() {
     <section
       ref={secondElem}
       id="secondElem"
-      className="mt-[50vh] text-6xl leading-[1.5]  flex  h-[100vh] "
+      className="mt-[50vh] text-6xl leading-[1.5] overflow-hidden flex  h-[100vh] "
     >
       <article
         className="panel panel1

@@ -181,7 +181,6 @@ export default function ThirdBox() {
         scrollTrigger: {
           trigger: '#photos',
           start: () => '+=' + (window.innerWidth * 3) / 4,
-          markers: true,
         },
         ease: 'power1.inOut',
       })
@@ -238,7 +237,7 @@ export default function ThirdBox() {
     >
       <article
         className="thirdPanel panel1 relative  flex justify-center items-center
-       text-4xl px-10 py-12 gap-10 min-w-[100vw] h-[100vh] bg-stone-300/80"
+       text-4xl px-10 py-12 gap-10 min-w-[100vw] h-[100vh] overflow-hidden bg-stone-300/80"
       >
         <Image
           id="img1"
@@ -264,7 +263,7 @@ export default function ThirdBox() {
       </article>
       <article
         className="thirdPanel relative flex justify-center items-center
-       text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-green-400/50"
+       text-4xl px-10 py-12  min-w-[100vw] h-[100vh] overflow-hidden bg-green-400/50"
       >
         <Image
           id="img4"
@@ -307,7 +306,7 @@ export default function ThirdBox() {
         id="clouds"
         className="thirdPanel grid grid-flow-col
          grid-rows-2 grid-cols-2 
-       text-4xl px-10 py-12 gap-[10vh]  min-w-[100vw] h-[100vh]
+       text-4xl px-10 py-12 gap-[10vh] overflow-hidden  min-w-[100vw] h-[100vh]
         bg-red-500/50"
       >
         <Image
