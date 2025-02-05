@@ -9,7 +9,7 @@ export default function FirstBox() {
   const firstElem = useRef<HTMLParagraphElement>(null)
   useGSAP(
     () => {
-      var tl = gsap.timeline({
+      const tl = gsap.timeline({
         scrollTrigger: {
           trigger: firstElem.current,
           toggleActions: 'play pause reverse pause',

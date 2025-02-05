@@ -31,7 +31,7 @@ export default function Circles() {
       imageRefs.current.forEach((element, i) => {
         let degPlus = 72 * i
         let degMinus = -1 * degPlus
-        let tl = gsap.timeline({
+        const tl = gsap.timeline({
           scrollTrigger: {
             trigger: '#images',
           },
@@ -78,7 +78,7 @@ export default function Circles() {
     },
     { scope: circlesComp }
   )
-  function handleImageClick(i: number) {}
+  
   return (
     <article ref={circlesComp} className="mt-[20vh] mb-[10vh] ">
       <h2 id="images" className="text-6xl text-center text-orange-400">
@@ -93,7 +93,6 @@ export default function Circles() {
                   imageRefs.current[i] = node
                 }
               }}
-              onClick={() => handleImageClick(i)}
               key={img.alt}
               src={img.url}
               alt={img.alt}

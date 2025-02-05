@@ -75,7 +75,7 @@ export default function ThirdBox() {
           ease: 'power2.inOut',
         }
       )
-      let tlCars = gsap.timeline({
+      const tlCars = gsap.timeline({
         scrollTrigger: {
           trigger: '#img4',
           start: '#img4',
@@ -140,7 +140,7 @@ export default function ThirdBox() {
           ease: 'power2.inOut',
         }
       )
-      let tlClouds = gsap.timeline({
+      const tlClouds = gsap.timeline({
         scrollTrigger: {
           trigger: '#clouds',
           start: () => '+=' + window.innerWidth / 2,

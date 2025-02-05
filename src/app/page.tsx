@@ -1,6 +1,4 @@
 'use client'
-
-import Link from 'next/link'
 import FirstBox from './components/main/FirstBox'
 import { useEffect, useState } from 'react'
 import SecondBox from './components/main/SecondBox'
@@ -23,9 +21,6 @@ export default function Home() {
       <SecondBox />
       <ThirdBox />
       <Circles/>
-      {/* <Link className="absolute top-10 right-10" href={`/blog`}>
-        Go to Blog page
-      </Link> */}
       {show < 300 ? (
         <section
           className="flex flex-col items-center gap-2 text-2xl fixed top-[90vh] 
