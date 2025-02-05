@@ -5,7 +5,7 @@ import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
-export default function FirstBox() {
+export default function SpinningCircles() {
   const firstElem = useRef<HTMLParagraphElement>(null)
   useGSAP(
     () => {

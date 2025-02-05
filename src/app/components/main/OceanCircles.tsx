@@ -20,7 +20,7 @@ const imagesArr: IImage[] = [
   { url: ocean4, alt: 'ocean4' },
   { url: ocean5, alt: 'ocean5' },
 ]
-export default function Circles() {
+export default function OceanCircles() {
   const circlesComp = useRef<HTMLElement>(null)
   const imageRefs = useRef<HTMLImageElement[]>([])
   useGSAP(

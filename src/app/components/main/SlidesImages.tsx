@@ -23,7 +23,7 @@ import img15 from '@/../public/images/thirdBox/15.jpg'
 import img16 from '@/../public/images/thirdBox/16.jpg'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
-export default function ThirdBox() {
+export default function SlidesImages() {
   const thirdElem = useRef<HTMLElement>(null)
 
   useGSAP(

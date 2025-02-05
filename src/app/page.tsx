@@ -1,12 +1,14 @@
 'use client'
 import { usePathname } from 'next/navigation'
-import FirstBox from './components/main/FirstBox'
 import { useEffect, useState } from 'react'
-import SecondBox from './components/main/SecondBox'
 import Image from 'next/image'
+
+import SpinningCircles from './components/main/SpinningCircles'
+import SlidesText from './components/main/SlidesText'
+import SlidesImages from './components/main/SlidesImages'
+import OceanCircles from './components/main/OceanCircles'
+
 import arrowDown from '../../public/icons/arrowDown.png'
-import ThirdBox from './components/main/ThirdBox'
-import Circles from './components/main/Circles'
 export default function Home() {
   const [show, setShow] = useState(0)
   const pathname = usePathname()
@@ -23,10 +25,10 @@ export default function Home() {
 
   return (
     <>
-      <FirstBox />
-      <SecondBox />
-      <ThirdBox />
-      <Circles />
+      <SpinningCircles />
+      <SlidesText />
+      <SlidesImages />
+      <OceanCircles />
       {show < 300 ? (
         <section
           className="flex flex-col items-center gap-2 text-2xl fixed top-[90vh] 
