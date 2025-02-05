@@ -6,7 +6,7 @@ import { Flip } from 'gsap/Flip'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(Flip, useGSAP, ScrollTrigger)
 
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import ocean1 from '@/../public/images/circles/1.jpg'
 import ocean2 from '@/../public/images/circles/2.jpg'
 import ocean3 from '@/../public/images/circles/3.jpg'

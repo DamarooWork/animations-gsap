@@ -48,38 +48,31 @@ export default function ThirdBox() {
         },
         ease: 'none',
       })
-      gsap.fromTo(
+      tlPanel1.fromTo(
         '#img1',
         {
           opacity: 0,
           scale: 0,
         },
         {
-          scrollTrigger: {
-            trigger: thirdElem.current,
-          },
           scale: 1,
           opacity: 1,
-          duration: 3,
+          duration: 1,
           x: -400,
           rotateZ: -30,
           ease: 'power2.inOut',
         }
       )
-      gsap.fromTo(
+      tlPanel1.fromTo(
         '#img2',
         {
           opacity: 0,
           scale: 0,
         },
         {
-          scrollTrigger: {
-            trigger: thirdElem.current,
-          },
-          delay: 1,
           scale: 1,
           opacity: 1,
-          duration: 3,
+          duration: 2,
           x: 400,
           rotateZ: 30,
           ease: 'power2.inOut',
