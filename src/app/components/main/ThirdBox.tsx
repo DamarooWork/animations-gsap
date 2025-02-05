@@ -144,8 +144,6 @@ export default function ThirdBox() {
         scrollTrigger: {
           trigger: '#clouds',
           start: () => '+=' + window.innerWidth / 2,
-          markers: true,
-          id: '13',
         },
         ease: 'power1.inOut',
       })
