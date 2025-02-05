@@ -22,13 +22,13 @@ export default function SpinningCircles() {
       })
       tl.to(firstElem.current, {
         duration: 3,
-        x: -600,
+        x: () => '-=' + '20vw',
         rotation: '+=720',
         ease: 'power1.inOut',
       })
       tl.to(firstElem.current, {
         duration: 6,
-        x: 600,
+        x: () => '+=' + '40vw',
         rotation: '-=1440',
         ease: 'power2.inOut',
       })
@@ -60,14 +60,11 @@ export default function SpinningCircles() {
   return (
     <section
       ref={firstElem}
-      id='firstElem'
+      id="firstElem"
       className="mt-[50vh] flex 
        gap-10  justify-center items-center text-orange-300"
     >
-      <p
-        className="relative flex-[3, 3, 0%]  text-center w-48 h-48  border-red-400 
-        border-2 rounded-full p-10 will-change-transform "
-      >
+      <p className="relative flex-[3, 3, 0%] text-center w-[10vw] h-[10vw]  border-orange-400 border-2 rounded-full p-10 will-change-transform ">
         <span
           id="meowSpan"
           className="absolute top-[50%] left-[50%] translate-x-[-50%]
@@ -77,7 +74,7 @@ export default function SpinningCircles() {
         </span>
       </p>
       <p
-        className="relative text-center w-48 h-48  border-red-400 
+        className="relative text-center w-[10vw] h-[10vw]  border-orange-400 
         border-2 rounded-full p-10 will-change-transform "
       >
         <span
@@ -89,7 +86,7 @@ export default function SpinningCircles() {
         </span>
       </p>
       <p
-        className="relative text-center w-48 h-48  border-red-400 
+        className="relative text-center w-[10vw] h-[10vw]  border-orange-400 
         border-2 rounded-full p-10 will-change-transform "
       >
         <span

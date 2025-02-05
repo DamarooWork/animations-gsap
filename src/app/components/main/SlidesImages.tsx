@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { TextPlugin } from 'gsap/TextPlugin'
 import Image from 'next/image'
 
 import img1 from '@/../public/images/thirdBox/1.jpg'
@@ -21,8 +22,14 @@ import img13 from '@/../public/images/thirdBox/13.jpg'
 import img14 from '@/../public/images/thirdBox/14.jpg'
 import img15 from '@/../public/images/thirdBox/15.jpg'
 import img16 from '@/../public/images/thirdBox/16.jpg'
+import cloudH1 from '@/../public/images/thirdBox/clouds/hor1.jpg'
+import cloudH2 from '@/../public/images/thirdBox/clouds/hor2.jpg'
+import cloudH3 from '@/../public/images/thirdBox/clouds/hor3.jpg'
+import cloudH4 from '@/../public/images/thirdBox/clouds/hor4.jpg'
+import cloudV1 from '@/../public/images/thirdBox/clouds/vert1.jpg'
+import cloudV2 from '@/../public/images/thirdBox/clouds/vert2.jpg'
 
-gsap.registerPlugin(useGSAP, ScrollTrigger)
+gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 export default function SlidesImages() {
   const thirdElem = useRef<HTMLElement>(null)
 
@@ -58,7 +65,7 @@ export default function SlidesImages() {
           scale: 1,
           opacity: 1,
           duration: 1,
-          x: -400,
+          x: () => '-=' + window.innerWidth / 5,
           rotateZ: -30,
           ease: 'power2.inOut',
         }
@@ -73,15 +80,15 @@ export default function SlidesImages() {
           scale: 1,
           opacity: 1,
           duration: 2,
-          x: 400,
+          x: () => '+=' + window.innerWidth / 5,
           rotateZ: 30,
           ease: 'power2.inOut',
         }
       )
       const tlCars = gsap.timeline({
         scrollTrigger: {
-          trigger: '#img4',
-          start: '#img4',
+          trigger: '#cars',
+          start: '30% 0',
         },
       })
       tlCars.fromTo(
@@ -91,7 +98,7 @@ export default function SlidesImages() {
           scale: 1,
           opacity: 1,
           duration: 1,
-          x: 600,
+          x: () => '+=' + window.innerWidth / 3,
           rotateZ: 20,
           ease: 'power2.inOut',
         }
@@ -103,7 +110,7 @@ export default function SlidesImages() {
           scale: 1,
           opacity: 1,
           duration: 1,
-          x: 300,
+          x: () => '+=' + window.innerWidth / 6,
           rotateZ: 10,
           ease: 'power2.inOut',
         }
@@ -115,7 +122,6 @@ export default function SlidesImages() {
           scale: 1,
           opacity: 1,
           duration: 1,
-          y: -20,
           ease: 'power2.inOut',
         }
       )
@@ -126,7 +132,7 @@ export default function SlidesImages() {
           scale: 1,
           opacity: 1,
           duration: 1,
-          x: -300,
+          x: () => '-=' + window.innerWidth / 6,
           rotateZ: -10,
           ease: 'power2.inOut',
         }
@@ -138,7 +144,7 @@ export default function SlidesImages() {
           scale: 1,
           opacity: 1,
           duration: 1,
-          x: -600,
+          x: () => '-=' + window.innerWidth / 3,
           rotateZ: -20,
           ease: 'power2.inOut',
         }
@@ -151,24 +157,70 @@ export default function SlidesImages() {
         ease: 'power1.inOut',
       })
       tlClouds.from('#img15', {
-        duration: 1,
+        duration: 2,
         scale: 0,
         opacity: 0,
         x: -400,
       })
       tlClouds.from('#img13', {
-        duration: 1,
+        duration: 1.5,
         scale: 0,
         opacity: 0,
         x: 200,
         y: 200,
       })
       tlClouds.from('#img14', {
+        duration: 1.5,
+        scale: 0,
+        opacity: 0,
+        x: 200,
+        y: -200,
+      })
+      tlClouds.from('#cloudV1', {
         duration: 1,
         scale: 0,
         opacity: 0,
         x: 200,
         y: -200,
+      })
+      tlClouds.from('#cloudV2', {
+        duration: 1,
+        scale: 0,
+        opacity: 0,
+        x: 200,
+        y: -200,
+      })
+      tlClouds.from('#cloudH1', {
+        duration: 0.5,
+        scale: 0,
+        opacity: 0,
+        x: -200,
+        y: 200,
+      })
+      tlClouds.from('#cloudH4', {
+        duration: 0.5,
+        scale: 0,
+        opacity: 0,
+        x: -200,
+        y: -200,
+      })
+      tlClouds.from('#cloudH2', {
+        duration: 0.5,
+        scale: 0,
+        opacity: 0,
+        x: -200,
+        y: -200,
+      })
+      tlClouds.from('#cloudH3', {
+        duration: 0.5,
+        scale: 0,
+        opacity: 0,
+        x: -200,
+        y: -200,
+      })
+      tlClouds.to('#textClouds', {
+        text: '#clouds',
+        duration: 3,
       })
       const tlPhotos = gsap.timeline({
         scrollTrigger: {
@@ -235,40 +287,41 @@ export default function SlidesImages() {
         <Image
           id="img1"
           loading="lazy"
-          className="w-auto  absolute h-[70vh] object-cover rounded-2xl"
+          className="w-auto max-w-[20vw]  absolute max-h-[70vh] object-cover rounded-2xl"
           src={img1}
           alt="img1"
         />
         <Image
           id="img2"
           loading="lazy"
-          className="w-auto absolute h-[70vh] object-cover rounded-2xl"
+          className="w-auto max-w-[20vw] absolute max-h-[70vh] object-cover rounded-2xl"
           src={img2}
           alt="img2"
         />
         <Image
           id="img3"
           loading="lazy"
-          className="w-auto absolute h-[80vh] object-cover rounded-2xl"
+          className="w-auto max-w-[20vw]  absolute max-h-[80vh] object-cover rounded-2xl"
           src={img3}
           alt="img3"
         />
       </article>
       <article
+        id="cars"
         className="thirdPanel relative flex justify-center items-center
        text-4xl px-10 py-12  min-w-[100vw] h-[100vh] overflow-hidden bg-green-400/50"
       >
         <Image
           id="img4"
           loading="lazy"
-          className="w-auto absolute hover:z-50  max-h-[70vh] object-cover rounded-2xl"
+          className="w-auto absolute hover:z-50  max-w-[15vw]  max-h-[70vh] object-cover rounded-2xl"
           src={img4}
           alt="img4"
         />
         <Image
           id="img5"
           loading="lazy"
-          className="w-auto absolute hover:z-50 max-h-[70vh] object-cover rounded-2xl"
+          className="w-auto absolute hover:z-50 max-w-[15vw] max-h-[70vh] object-cover rounded-2xl"
           src={img5}
           alt="img5"
         />
@@ -276,53 +329,101 @@ export default function SlidesImages() {
         <Image
           id="img10"
           loading="lazy"
-          className="w-auto z-20 absolute hover:z-50 max-h-[70vh] object-cover rounded-2xl"
+          className="w-auto z-20 absolute hover:z-50 max-w-[15vw] max-h-[70vh] object-cover rounded-2xl"
           src={img10}
           alt="img10"
         />
         <Image
           id="img11"
           loading="lazy"
-          className="w-auto z-10 absolute hover:z-50 max-h-[70vh] object-cover rounded-2xl"
+          className="w-auto z-10 absolute hover:z-50 max-w-[15vw] max-h-[70vh] object-cover rounded-2xl"
           src={img11}
           alt="img11"
         />
         <Image
           id="img12"
           loading="lazy"
-          className="w-auto absolute hover:z-50 max-h-[70vh] object-cover rounded-2xl"
+          className="w-auto absolute hover:z-50 max-w-[15vw] max-h-[70vh] object-cover rounded-2xl"
           src={img12}
           alt="img12"
         />
       </article>
       <article
         id="clouds"
-        className="thirdPanel grid grid-flow-col
-         grid-rows-2 grid-cols-2 
-       text-4xl px-10 py-12 gap-[10vh] overflow-hidden  min-w-[100vw] h-[100vh]
+        className="thirdPanel relative grid grid-flow-col
+         grid-rows-4 grid-cols-6 
+         gap-0 overflow-hidden  min-w-[100vw] h-[100vh]
         bg-red-500/50"
       >
         <Image
+          id="cloudH1"
+          loading="lazy"
+          className="object-cover w-full h-full  "
+          src={cloudH1}
+          alt="cloudH1"
+        />
+        <Image
+          id="cloudH2"
+          loading="lazy"
+          className="object-cover  w-full h-full "
+          src={cloudH2}
+          alt="cloudH2"
+        />
+        <Image
+          id="cloudH3"
+          loading="lazy"
+          className="object-cover w-full h-full "
+          src={cloudH3}
+          alt="cloudH3"
+        />
+        <Image
+          id="cloudH4"
+          loading="lazy"
+          className="object-cover w-full h-full   "
+          src={cloudH4}
+          alt="cloudH4"
+        />
+        <Image
+          id="cloudV1"
+          loading="lazy"
+          className=" row-span-2 object-cover w-full h-full  "
+          src={cloudV1}
+          alt="cloudV1"
+        />
+        <Image
+          id="cloudV2"
+          loading="lazy"
+          className=" row-span-2 object-cover w-full h-full "
+          src={cloudV2}
+          alt="cloudV2"
+        />
+        <Image
           id="img13"
           loading="lazy"
-          className="w-auto max-h-[40vh] place-self-end  rounded-2xl"
+          className=" row-span-2 col-span-2 object-cover w-full h-full "
           src={img13}
           alt="img13"
         />
         <Image
           id="img14"
           loading="lazy"
-          className="w-auto max-h-[40vh] place-self-end   rounded-2xl"
+          className=" row-span-2 col-span-2 object-cover  w-full h-full  "
           src={img14}
           alt="img14"
         />
         <Image
           id="img15"
           loading="lazy"
-          className="w-auto row-span-2 self-start  max-h-[90vh]  rounded-2xl"
+          className="row-span-4 col-span-2 object-cover w-full h-full "
           src={img15}
           alt="img15"
         />
+        <p
+          id="textClouds"
+          className="lg:text-6xl
+         text-orange-400 italic font-semibold absolute
+          top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+        ></p>
       </article>
       <article
         id="photos"

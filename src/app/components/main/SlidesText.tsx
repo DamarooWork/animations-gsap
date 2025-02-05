@@ -111,31 +111,31 @@ export default function SlidesText() {
     <section
       ref={secondElem}
       id="secondElem"
-      className="mt-[50vh] text-6xl leading-[1.5] overflow-hidden flex  h-[100vh] "
+      className="mt-[50vh]  text-4xl lg:text-6xl lg:leading-[1.5] overflow-hidden flex  h-[100vh] "
     >
       <article
-        className="panel panel1
+        className="panel panel1 max-lg:flex max-lg:flex-col max-lg:justify-center
        p-[10vw]  min-w-[100vw] h-[100vh] bg-orange-500/80"
       >
         <p className="text1 mb-[5vh]"></p>
         <p className="text2"></p>
       </article>
       <article
-        className="panel panel2
+        className="panel panel2 max-lg:flex max-lg:flex-col max-lg:justify-center
        p-[5vw]  min-w-[100vw] h-[100vh] bg-violet-500/60"
       >
         <p className="text3 mb-[5vh]"></p>
         <p className="text4"></p>
       </article>
       <article
-        className="panel panel3
+        className="panel panel3 max-lg:flex max-lg:flex-col max-lg:justify-center
         p-[5vw]  min-w-[100vw] h-[100vh] bg-red-500/50"
       >
         <p className="text5 mb-[5vh]"></p>
         <p className="text6"></p>
       </article>
       <article
-        className="panel panel4
+        className="panel panel4 max-lg:flex max-lg:flex-col max-lg:justify-center
          p-[5vw]  min-w-[100vw] h-[100vh] bg-blue-500/60"
       >
         <p className="text7 mb-[5vh]"></p>
