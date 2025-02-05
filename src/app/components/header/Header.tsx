@@ -12,7 +12,6 @@ export default function Header() {
         trigger: headerText.current,
         end: '20% 50%',
         endTrigger: '#firstElem',
-        markers: true,
         toggleActions: 'play pause resume reset',
       },
       scale: '1.1',
