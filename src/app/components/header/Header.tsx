@@ -2,12 +2,19 @@
 import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-
-gsap.registerPlugin(useGSAP)
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 export default function Header() {
   const headerText = useRef<HTMLHeadingElement>(null)
   useGSAP(() => {
     gsap.to(headerText.current, {
+      scrollTrigger: {
+        trigger: headerText.current,
+        end: '20% 50%',
+        endTrigger: '#firstElem',
+        markers: true,
+        toggleActions: 'play pause resume reset',
+      },
       scale: '1.1',
       duration: 2,
       repeat: -1,

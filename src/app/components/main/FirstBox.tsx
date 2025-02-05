@@ -60,6 +60,7 @@ export default function FirstBox() {
   return (
     <section
       ref={firstElem}
+      id='firstElem'
       className="mt-[50vh] flex 
        gap-10  justify-center items-center text-orange-300"
     >
