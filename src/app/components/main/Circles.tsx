@@ -12,10 +12,7 @@ import ocean2 from '@/../public/images/circles/2.jpg'
 import ocean3 from '@/../public/images/circles/3.jpg'
 import ocean4 from '@/../public/images/circles/4.jpg'
 import ocean5 from '@/../public/images/circles/5.jpg'
-interface IImage {
-  url: StaticImageData
-  alt: string
-}
+
 const imagesArr: IImage[] = [
   { url: ocean1, alt: 'ocean1' },
   { url: ocean2, alt: 'ocean2' },

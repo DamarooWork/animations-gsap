@@ -26,7 +26,7 @@ export default function SecondBox() {
       const tlPanel1 = gsap.timeline({
         scrollTrigger: {
           trigger: '.panel1',
-          snap: 1 / 10,
+          snap: 1 / 2,
           end: () => '+=' + secondElem.current?.offsetHeight,
         },
         ease: 'none',

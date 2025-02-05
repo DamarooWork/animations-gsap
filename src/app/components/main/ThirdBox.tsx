@@ -10,6 +10,7 @@ import img2 from '@/../public/images/thirdBox/2.jpg'
 import img3 from '@/../public/images/thirdBox/3.jpg'
 import img4 from '@/../public/images/thirdBox/4.jpg'
 import img5 from '@/../public/images/thirdBox/5.jpg'
+import img6 from '@/../public/images/thirdBox/6.jpg'
 import img7 from '@/../public/images/thirdBox/7.jpg'
 import img8 from '@/../public/images/thirdBox/8.jpg'
 import img9 from '@/../public/images/thirdBox/9.jpg'
@@ -19,6 +20,7 @@ import img12 from '@/../public/images/thirdBox/12.jpg'
 import img13 from '@/../public/images/thirdBox/13.jpg'
 import img14 from '@/../public/images/thirdBox/14.jpg'
 import img15 from '@/../public/images/thirdBox/15.jpg'
+import img16 from '@/../public/images/thirdBox/16.jpg'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 export default function ThirdBox() {
@@ -37,6 +39,14 @@ export default function ThirdBox() {
           snap: 1 / (sections.length - 1),
           end: () => '+=' + thirdElem.current?.offsetWidth,
         },
+      })
+      const tlPanel1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: thirdElem.current,
+          snap: 1 / 2,
+          end: () => '+=' + thirdElem.current?.offsetHeight,
+        },
+        ease: 'none',
       })
       gsap.fromTo(
         '#img1',
@@ -167,6 +177,56 @@ export default function ThirdBox() {
         x: 200,
         y: -200,
       })
+      const tlPhotos = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#photos',
+          start: () => '+=' + (window.innerWidth * 3) / 4,
+          markers: true,
+        },
+        ease: 'power1.inOut',
+      })
+      tlPhotos.from('#img7', {
+        delay: 1.5,
+        display: 'absolute',
+        duration: 1,
+        rotateZ: -20,
+        scale: 0.2,
+
+        y: () => '+=' + window.innerHeight / 2,
+        x: () => '+=' + window.innerWidth / 4,
+      })
+      tlPhotos.from('#img8', {
+        display: 'absolute',
+        duration: 1,
+        rotateZ: -10,
+        scale: 0.2,
+        y: () => '+=' + window.innerHeight / 2,
+        x: () => '+=' + window.innerWidth / 3,
+      })
+      tlPhotos.from('#img9', {
+        display: 'absolute',
+        duration: 1,
+        rotateZ: 0,
+        scale: 0.2,
+        y: () => '+=' + window.innerHeight / 2,
+        x: 0,
+      })
+      tlPhotos.from('#img6', {
+        display: 'absolute',
+        duration: 1,
+        rotateZ: 20,
+        scale: 0.2,
+        y: () => '+=' + window.innerHeight / 2,
+        x: () => '-=' + window.innerWidth / 3,
+      })
+      tlPhotos.from('#img16', {
+        display: 'absolute',
+        duration: 1,
+        rotateZ: 10,
+        scale: 0.2,
+        y: () => '+=' + window.innerHeight / 2,
+        x: () => '-=' + window.innerWidth / 4,
+      })
     },
     { scope: thirdElem }
   )
@@ -178,7 +238,7 @@ export default function ThirdBox() {
     >
       <article
         className="thirdPanel panel1 relative  flex justify-center items-center
-       text-4xl px-10 py-12 gap-10 min-w-[100vw] h-[100vh] bg-orange-500"
+       text-4xl px-10 py-12 gap-10 min-w-[100vw] h-[100vh] bg-stone-300/80"
       >
         <Image
           id="img1"
@@ -204,7 +264,7 @@ export default function ThirdBox() {
       </article>
       <article
         className="thirdPanel relative flex justify-center items-center
-       text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-violet-500"
+       text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-green-400/50"
       >
         <Image
           id="img4"
@@ -247,7 +307,8 @@ export default function ThirdBox() {
         id="clouds"
         className="thirdPanel grid grid-flow-col
          grid-rows-2 grid-cols-2 
-       text-4xl px-10 py-12 gap-[10vh]  min-w-[100vw] h-[100vh] bg-red-500"
+       text-4xl px-10 py-12 gap-[10vh]  min-w-[100vw] h-[100vh]
+        bg-red-500/50"
       >
         <Image
           id="img13"
@@ -272,29 +333,44 @@ export default function ThirdBox() {
         />
       </article>
       <article
-        className="thirdPanel flex justify-around items-center
-       text-4xl px-10 py-12  min-w-[100vw] h-[100vh] bg-blue-500"
+        id="photos"
+        className="thirdPanel relative flex justify-around items-center
+       text-4xl px-10 py-12  min-w-[100vw] h-[100vh] overflow-hidden bg-cyan-400/50"
       >
         <Image
           id="img7"
           loading="lazy"
-          className="w-auto max-h-[80vh] object-cover rounded-2xl"
+          className="w-[18vw]  h-auto object-cover rounded-2xl"
           src={img7}
           alt="img7"
         />
         <Image
           id="img8"
           loading="lazy"
-          className="w-auto max-h-[80vh] object-cover rounded-2xl"
+          className="w-[18vw]  h-auto object-cover rounded-2xl"
           src={img8}
           alt="img8"
         />
         <Image
           id="img9"
           loading="lazy"
-          className="w-auto max-h-[80vh] object-cover rounded-2xl"
+          className="w-[18vw]  h-auto object-cover rounded-2xl"
           src={img9}
           alt="img9"
+        />
+        <Image
+          id="img16"
+          loading="lazy"
+          className="w-[18vw]   h-auto object-cover rounded-2xl"
+          src={img16}
+          alt="img16"
+        />
+        <Image
+          id="img6"
+          loading="lazy"
+          className="w-[18vw]  h-auto object-cover rounded-2xl"
+          src={img6}
+          alt="img6"
         />
       </article>
     </section>
