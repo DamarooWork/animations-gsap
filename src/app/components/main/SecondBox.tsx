@@ -43,7 +43,7 @@ export default function SecondBox() {
         scrollTrigger: {
           trigger: '.panel2',
           start: () => '+=' + window.innerWidth / 4,
-          end: () => '+=' + secondElem.current?.offsetHeight!,
+          end: () => '+=' + secondElem.current?.offsetHeight,
         },
       })
       tlPanel2.to('.text3', {
@@ -60,7 +60,7 @@ export default function SecondBox() {
         scrollTrigger: {
           trigger: '.panel3',
           start: () => '+=' + window.innerWidth / 2,
-          end: () => '+=' + secondElem.current?.offsetHeight!,
+          end: () => '+=' + secondElem.current?.offsetHeight,
         },
       })
       tlPanel3.to('.text5', {
@@ -77,7 +77,7 @@ export default function SecondBox() {
         scrollTrigger: {
           trigger: '.panel4',
           start: () => '+=' + (window.innerWidth * 3) / 4,
-          end: () => '+=' + secondElem.current?.offsetHeight!,
+          end: () => '+=' + secondElem.current?.offsetHeight,
         },
       })
       tlPanel4.to('.text7', {
