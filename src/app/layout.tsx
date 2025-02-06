@@ -1,5 +1,7 @@
+import { Suspense } from 'react'
 import Header from './components/header/Header'
 import './globals.css'
+import Loading from './loading'
 
 export default function DashboardLayout({
   children,
@@ -13,8 +15,10 @@ export default function DashboardLayout({
         <title>Animated world</title>
       </head>
       <body>
-        <Header />
-        <main className="mt-20">{children}</main>
+        <Suspense fallback={<Loading/>}> 
+          <Header />
+          <main className="mt-20">{children}</main>
+        </Suspense>
       </body>
     </html>
   )

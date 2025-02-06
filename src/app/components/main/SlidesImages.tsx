@@ -160,7 +160,7 @@ export default function SlidesImages() {
         duration: 2,
         scale: 0,
         opacity: 0,
-        x: -400,
+        x: 400,
       })
       tlClouds.from('#img13', {
         duration: 1.5,
@@ -221,6 +221,7 @@ export default function SlidesImages() {
       tlClouds.to('#textClouds', {
         text: '#clouds',
         duration: 3,
+        ease: 'none',
       })
       const tlPhotos = gsap.timeline({
         scrollTrigger: {
@@ -420,7 +421,7 @@ export default function SlidesImages() {
         />
         <p
           id="textClouds"
-          className="lg:text-6xl
+          className="text-6xl
          text-orange-400 italic font-semibold absolute
           top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
         ></p>

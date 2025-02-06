@@ -75,11 +75,14 @@ export default function OceanCircles() {
     },
     { scope: circlesComp }
   )
-  
+
   return (
     <article ref={circlesComp} className="mt-[20vh] mb-[10vh] ">
-      <h2 id="images" className="text-6xl text-center text-orange-400">
-        Oceans
+      <h2
+        id="images"
+        className="text-6xl text-center text-orange-400 italic font-semibold"
+      >
+        #OCEANS
       </h2>
       <section className="circles mt-[10vh] h-[90vh]  relative flex justify-center ">
         {imagesArr.map((img: IImage, i: number) => {
@@ -94,7 +97,8 @@ export default function OceanCircles() {
               src={img.url}
               alt={img.alt}
               className="circle 
-               absolute top-[50%] left-[50%] rounded-full w-60 h-60 object-cover"
+               absolute top-[50%] left-[50%] rounded-full
+                w-[12vh] h-[12vh] lg:w-60 lg:h-60 object-cover"
             />
           )
         })}

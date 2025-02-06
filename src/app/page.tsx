@@ -31,7 +31,7 @@ export default function Home() {
       <OceanCircles />
       {show < 300 ? (
         <section
-          className="flex flex-col items-center gap-2 text-2xl fixed top-[90vh] 
+          className="flex flex-col items-center gap-2 text-2xl fixed top-[80vh] lg:top-[90vh] 
         left-[50%] translate-x-[-50%]"
         >
           <p className="text-orange-400">Scroll down</p>
