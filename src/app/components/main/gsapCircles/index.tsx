@@ -12,7 +12,7 @@ const circlesArr = [
   { id: 'Third', text: 'Third!' },
 ]
 
-export default function gsapCircles() {
+export default function GsapCircles() {
   const gsapCircles = useRef<HTMLParagraphElement>(null)
   useGSAP(
     () => {

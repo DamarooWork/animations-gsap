@@ -31,47 +31,47 @@ export default function People() {
         },
         ease: 'power1.inOut',
       })
-      tlPeople.from('#person1', {
-        delay: 1.5,
-        display: 'absolute',
-        duration: 1,
-        rotateZ: -20,
-        scale: 0.2,
 
-        y: () => '+=' + window.innerHeight / 2,
-        x: () => '+=' + window.innerWidth / 4,
-      })
-      tlPeople.from('#person2', {
-        display: 'absolute',
-        duration: 1,
-        rotateZ: -10,
-        scale: 0.2,
-        y: () => '+=' + window.innerHeight / 2,
-        x: () => '+=' + window.innerWidth / 3,
-      })
-      tlPeople.from('#person3', {
-        display: 'absolute',
-        duration: 1,
-        rotateZ: 0,
-        scale: 0.2,
-        y: () => '+=' + window.innerHeight / 2,
-        x: 0,
-      })
-      tlPeople.from('#person4', {
-        display: 'absolute',
-        duration: 1,
-        rotateZ: 20,
-        scale: 0.2,
-        y: () => '+=' + window.innerHeight / 2,
-        x: () => '-=' + window.innerWidth / 3,
-      })
       tlPeople.from('#person5', {
+        delay: 1.5,
         display: 'absolute',
         duration: 1,
         rotateZ: 10,
         scale: 0.2,
         y: () => '+=' + window.innerHeight / 2,
         x: () => '-=' + window.innerWidth / 4,
+      })
+      tlPeople.from('#person4', {
+        display: 'absolute',
+        duration: 0.8,
+        rotateZ: 20,
+        scale: 0.2,
+        y: () => '+=' + window.innerHeight / 2,
+        x: () => '-=' + window.innerWidth / 4,
+      })
+      tlPeople.from('#person3', {
+        display: 'absolute',
+        duration: 0.6,
+        rotateZ: 0,
+        scale: 0.2,
+        y: () => '+=' + window.innerHeight / 2,
+        x: 0,
+      })
+      tlPeople.from('#person2', {
+        display: 'absolute',
+        duration: 0.5,
+        rotateZ: -10,
+        scale: 0.2,
+        y: () => '+=' + window.innerHeight / 2,
+        x: () => '+=' + window.innerWidth / 4,
+      })
+      tlPeople.from('#person1', {
+        display: 'absolute',
+        duration: 0.4,
+        rotateZ: -20,
+        scale: 0.2,
+        y: () => '+=' + window.innerHeight / 2,
+        x: () => '+=' + window.innerWidth / 4,
       })
     },
     { scope: people }
@@ -80,7 +80,7 @@ export default function People() {
     <article
       ref={people}
       id="people"
-      className="slideImages relative flex justify-around items-center text-4xl px-10 py-12  min-w-[100vw] h-[100vh] overflow-hidden bg-cyan-400/50"
+      className="slideImages relative flex lg:flex-row justify-around items-center text-4xl px-10 py-12  min-w-[100vw] h-[100vh] overflow-hidden bg-cyan-400/50"
     >
       {peopleArr.map((person) => {
         return (
