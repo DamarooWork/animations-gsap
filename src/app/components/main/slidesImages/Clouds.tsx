@@ -8,15 +8,15 @@ import { TextPlugin } from 'gsap/TextPlugin'
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 
 import Image from 'next/image'
-import cloudH5 from '@/../public/images/slidesImages/clouds/hor5.jpg'
-import cloudH6 from '@/../public/images/slidesImages/clouds/hor6.jpg'
-import cloudV3 from '@/../public/images/slidesImages/clouds/vert3.jpg'
 import cloudH1 from '@/../public/images/slidesImages/clouds/hor1.jpg'
 import cloudH2 from '@/../public/images/slidesImages/clouds/hor2.jpg'
 import cloudH3 from '@/../public/images/slidesImages/clouds/hor3.jpg'
 import cloudH4 from '@/../public/images/slidesImages/clouds/hor4.jpg'
-import cloudV1 from '@/../public/images/slidesImages/clouds/vert1.jpg'
+import cloudH5 from '@/../public/images/slidesImages/clouds/hor5.jpg'
+import cloudH6 from '@/../public/images/slidesImages/clouds/hor6.jpg'
+import cloudV1 from '@/../public/images/slidesImages/clouds/vert3.jpg'
 import cloudV2 from '@/../public/images/slidesImages/clouds/vert2.jpg'
+import cloudV3 from '@/../public/images/slidesImages/clouds/vert4.jpg'
 export default function Clouds() {
   const clouds = useRef(null)
   useGSAP(

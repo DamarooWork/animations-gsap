@@ -27,37 +27,37 @@ export default function Circles({ images }: { images: IImage[] }) {
         })
         tl.to(element, {
           transform: `translate(-50%, -50%) rotate(${degPlus}deg)
-           translate(30vh) rotate(${degMinus}deg)`,
+           translate(30vmin) rotate(${degMinus}deg)`,
         })
         degPlus = 72 * i + 72
         degMinus = -1 * degPlus
         tl.to(element, {
           transform: `translate(-50%, -50%) rotate(${degPlus}deg)
-           translate(30vh) rotate(${degMinus}deg)`,
+           translate(30vmin) rotate(${degMinus}deg)`,
         })
         degPlus = 72 * i + 144
         degMinus = -1 * degPlus
         tl.to(element, {
           transform: `translate(-50%, -50%) rotate(${degPlus}deg)
-           translate(30vh) rotate(${degMinus}deg)`,
+           translate(30vmin) rotate(${degMinus}deg)`,
         })
         degPlus = 72 * i + 216
         degMinus = -1 * degPlus
         tl.to(element, {
           transform: `translate(-50%, -50%) rotate(${degPlus}deg)
-           translate(30vh) rotate(${degMinus}deg)`,
+           translate(30vmin) rotate(${degMinus}deg)`,
         })
         degPlus = 72 * i + 288
         degMinus = -1 * degPlus
         tl.to(element, {
           transform: `translate(-50%, -50%) rotate(${degPlus}deg)
-           translate(30vh) rotate(${degMinus}deg)`,
+           translate(30vmin) rotate(${degMinus}deg)`,
         })
         degPlus = 72 * i + 360
         degMinus = -1 * degPlus
         tl.to(element, {
           transform: `translate(-50%, -50%) rotate(${degPlus}deg)
-           translate(30vh) rotate(${degMinus}deg)`,
+           translate(30vmin) rotate(${degMinus}deg)`,
         })
       })
     },
