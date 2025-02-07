@@ -6,33 +6,33 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 export default function SpinningCircles() {
-  const firstElem = useRef<HTMLParagraphElement>(null)
+  const spinningCircles = useRef<HTMLParagraphElement>(null)
   useGSAP(
     () => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: firstElem.current,
+          trigger: spinningCircles.current,
           toggleActions: 'play pause reverse pause',
           start: '50% 50%',
           end: 'bottom 20%',
-          endTrigger: '#secondElem',
+          endTrigger: '#slidesText',
           scrub: 2,
           pin: true,
         },
       })
-      tl.to(firstElem.current, {
+      tl.to(spinningCircles.current, {
         duration: 3,
         x: () => '-=' + '20vw',
         rotation: '+=720',
         ease: 'power1.inOut',
       })
-      tl.to(firstElem.current, {
+      tl.to(spinningCircles.current, {
         duration: 6,
         x: () => '+=' + '40vw',
         rotation: '-=1440',
         ease: 'power2.inOut',
       })
-      tl.to(firstElem.current, {
+      tl.to(spinningCircles.current, {
         duration: 3,
         x: 0,
         rotation: '+=720',
@@ -55,12 +55,12 @@ export default function SpinningCircles() {
         ease: 'power1.inOut',
       })
     },
-    { scope: firstElem }
+    { scope: spinningCircles }
   )
   return (
     <section
-      ref={firstElem}
-      id="firstElem"
+      ref={spinningCircles}
+      id="spinningCircles"
       className="mt-[50vh] flex 
        gap-10  justify-center items-center text-orange-300"
     >

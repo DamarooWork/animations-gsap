@@ -1,11 +1,13 @@
 'use client'
 import { useRef } from 'react'
+
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
-import Image from 'next/image'
+gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 
+import Image from 'next/image'
 import img1 from '@/../public/images/thirdBox/1.jpg'
 import img2 from '@/../public/images/thirdBox/2.jpg'
 import img3 from '@/../public/images/thirdBox/3.jpg'
@@ -29,7 +31,7 @@ import cloudH4 from '@/../public/images/thirdBox/clouds/hor4.jpg'
 import cloudV1 from '@/../public/images/thirdBox/clouds/vert1.jpg'
 import cloudV2 from '@/../public/images/thirdBox/clouds/vert2.jpg'
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
+
 export default function SlidesImages() {
   const thirdElem = useRef<HTMLElement>(null)
 
@@ -276,7 +278,7 @@ export default function SlidesImages() {
     { scope: thirdElem }
   )
   return (
-    <section
+    <article
       ref={thirdElem}
       id="thirdElem"
       className=" flex flex-row-reverse  h-[100vh]"
@@ -467,6 +469,6 @@ export default function SlidesImages() {
           alt="img6"
         />
       </article>
-    </section>
+    </article>
   )
 }
