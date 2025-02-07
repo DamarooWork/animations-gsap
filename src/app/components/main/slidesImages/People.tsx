@@ -34,35 +34,34 @@ export default function People() {
             console.log(window.innerWidth, innerHeight)
             return '+=' + window.innerHeight * 2
           },
-          markers: true,
         },
-        // ease: 'power1.inOut',
       })
       tlPeople.to(people.current, {
         delay: 2,
       })
-      peopleRefs.current.reverse().forEach((img) => {
+      peopleRefs.current.toReversed().forEach((img) => {
         tlPeople.fromTo(
           img,
           {
             position: 'absolute',
-            // x: () => '+=' + window.innerWidth / 10,
+            // x: () => '+=' + window.innerWidth / 5,
             width: '100%',
             height: 'auto',
-            opacity: 0.5,
+            opacity: 0.8,
             scale: 1.2,
           },
           {
             position: 'absolute',
             scale: 1,
             opacity: 0,
-            duration: 1.25,
+            duration: 1.5,
             ease: 'power3.out',
+            zIndex: 10,
           },
-          '>-0.6'
+          '>-1.2'
         )
       })
-      peopleRefs.current.reverse().forEach((img) => {
+      peopleRefs.current.forEach((img) => {
         tlPeople.fromTo(
           img,
           {
