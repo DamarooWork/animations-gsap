@@ -6,7 +6,7 @@ import Image from 'next/image'
 import SpinningCircles from './components/main/SpinningCircles'
 import SlidesText from './components/main/SlidesText'
 import SlidesImages from './components/main/SlidesImages'
-import OceanCircles from './components/main/OceanCircles'
+import OceanCircles from './components/main/oceanCircles/OceanCircles'
 
 import arrowDown from '../../public/icons/arrowDown.png'
 export default function Home() {
