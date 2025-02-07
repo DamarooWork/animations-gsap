@@ -7,12 +7,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 import Image from 'next/image'
-import img4 from '@/../public/images/slidesImages/cars/4.jpg'
-import img5 from '@/../public/images/slidesImages/cars/5.jpg'
-import img10 from '@/../public/images/slidesImages/cars/10.jpg'
-import img11 from '@/../public/images/slidesImages/cars/11.jpg'
-import img12 from '@/../public/images/slidesImages/cars/12.jpg'
+import car1 from '@/../public/images/slidesImages/cars/1.jpg'
+import car2 from '@/../public/images/slidesImages/cars/2.jpg'
+import car3 from '@/../public/images/slidesImages/cars/3.jpg'
+import car4 from '@/../public/images/slidesImages/cars/4.jpg'
+import car5 from '@/../public/images/slidesImages/cars/5.jpg'
 
+const carsArr: IImage[] = [
+  { url: car1, alt: 'car1' },
+  { url: car2, alt: 'car2' },
+  { url: car3, alt: 'car3' },
+  { url: car4, alt: 'car4' },
+  { url: car5, alt: 'car5' },
+]
 export default function Cars() {
   const cars = useRef(null)
   useGSAP(
@@ -24,7 +31,7 @@ export default function Cars() {
         },
       })
       tlCars.fromTo(
-        '#img4',
+        '#car1',
         { opacity: 0, scale: 0.2 },
         {
           scale: 1,
@@ -36,7 +43,7 @@ export default function Cars() {
         }
       )
       tlCars.fromTo(
-        '#img5',
+        '#car2',
         { opacity: 0, scale: 0.2 },
         {
           scale: 1,
@@ -48,7 +55,7 @@ export default function Cars() {
         }
       )
       tlCars.fromTo(
-        '#img10',
+        '#car3',
         { opacity: 0, scale: 0.2 },
         {
           scale: 1,
@@ -58,7 +65,7 @@ export default function Cars() {
         }
       )
       tlCars.fromTo(
-        '#img11',
+        '#car4',
         { opacity: 0, scale: 0.2 },
         {
           scale: 1,
@@ -70,7 +77,7 @@ export default function Cars() {
         }
       )
       tlCars.fromTo(
-        '#img12',
+        '#car5',
         { opacity: 0, scale: 0.2 },
         {
           scale: 1,
@@ -88,45 +95,22 @@ export default function Cars() {
     <article
       ref={cars}
       id="cars"
-      className="slideImages relative flex justify-center items-center
-   text-4xl px-10 py-12  min-w-[100vw] h-[100vh] overflow-hidden bg-green-400/50"
+      className="slideImages relative flex justify-center items-center text-4xl px-10 py-12 min-w-[100vw] h-[100vh] overflow-hidden bg-green-400/50"
     >
-      <Image
-        id="img4"
-        loading="lazy"
-        className="w-auto absolute hover:z-50  max-w-[15vw]  max-h-[70vh] object-cover rounded-2xl"
-        src={img4}
-        alt="img4"
-      />
-      <Image
-        id="img5"
-        loading="lazy"
-        className="w-auto absolute hover:z-50 max-w-[15vw] max-h-[70vh] object-cover rounded-2xl"
-        src={img5}
-        alt="img5"
-      />
-
-      <Image
-        id="img10"
-        loading="lazy"
-        className="w-auto z-20 absolute hover:z-50 max-w-[15vw] max-h-[70vh] object-cover rounded-2xl"
-        src={img10}
-        alt="img10"
-      />
-      <Image
-        id="img11"
-        loading="lazy"
-        className="w-auto z-10 absolute hover:z-50 max-w-[15vw] max-h-[70vh] object-cover rounded-2xl"
-        src={img11}
-        alt="img11"
-      />
-      <Image
-        id="img12"
-        loading="lazy"
-        className="w-auto absolute hover:z-50 max-w-[15vw] max-h-[70vh] object-cover rounded-2xl"
-        src={img12}
-        alt="img12"
-      />
+      {carsArr.map((car, i) => {
+        return (
+          <Image
+            key={car.alt}
+            id={car.alt}
+            loading="lazy"
+            className={`w-auto absolute ${
+              i === 2 ? 'z-20' : i === 3 ? 'z-10' : ''
+            } hover:z-50  max-w-[15vw]  max-h-[70vh] object-cover rounded-2xl`}
+            src={car.url}
+            alt={car.alt}
+          />
+        )
+      })}
     </article>
   )
 }
