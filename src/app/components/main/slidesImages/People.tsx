@@ -30,51 +30,55 @@ export default function People() {
       const tlPeople = gsap.timeline({
         scrollTrigger: {
           trigger: people.current,
-          start: () => '+=' + (window.innerWidth * 3) / 4,
+          start: () => {
+            console.log(window.innerWidth, innerHeight)
+            return '+=' + window.innerHeight * 2
+          },
+          markers: true,
         },
         // ease: 'power1.inOut',
       })
-      peopleRefs.current.forEach((img) => {
+      tlPeople.to(people.current, {
+        delay: 2,
+      })
+      peopleRefs.current.reverse().forEach((img) => {
         tlPeople.fromTo(
           img,
           {
             position: 'absolute',
-            x: () => '+=' + window.innerWidth / 10,
-            width: '80%',
+            // x: () => '+=' + window.innerWidth / 10,
+            width: '100%',
             height: 'auto',
-            opacity: 1,
+            opacity: 0.5,
             scale: 1.2,
           },
           {
             position: 'absolute',
             scale: 1,
             opacity: 0,
-            duration: 1.5,
+            duration: 1.25,
             ease: 'power3.out',
           },
-
-          '>-0.9'
+          '>-0.6'
         )
       })
-      peopleRefs.current.forEach((img) => {
+      peopleRefs.current.reverse().forEach((img) => {
         tlPeople.fromTo(
           img,
           {
             position: 'absolute',
             scale: 1,
             opacity: 0,
-            duration: 1.25,
             ease: 'power3.out',
           },
           {
-            margin: '0',
             position: 'static',
             scale: 1,
             opacity: 1,
             x: 0,
-            width: () => window.innerWidth / 5,
+            width: () => window.innerWidth / peopleRefs.current.length,
             height: '100%',
-            duration: 1.25,
+            duration: 1.3,
             ease: 'power3.out',
           },
           '>-1'
@@ -141,7 +145,7 @@ export default function People() {
             key={person.alt}
             id={person.alt}
             loading="lazy"
-            className={`w-1/${peopleArr.length} absolute block h-full object-cover`}
+            className={`w-1/${peopleArr.length} opacity-0 absolute block h-full object-cover`}
             src={person.url}
             alt={person.alt}
           />

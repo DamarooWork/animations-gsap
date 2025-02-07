@@ -29,67 +29,99 @@ export default function Clouds() {
         ease: 'power1.inOut',
       })
       tlClouds.from('#cloudV3', {
-        duration: 1,
+        duration: 3,
         scale: 0,
         opacity: 0,
         x: 400,
       })
-      tlClouds.from('#cloudH5', {
-        duration: 0.8,
-        scale: 0,
-        opacity: 0,
-        x: 200,
-        y: 200,
-      })
-      tlClouds.from('#cloudH6', {
-        duration: 0.8,
-        scale: 0,
-        opacity: 0,
-        x: 200,
-        y: -200,
-      })
-      tlClouds.from('#cloudV1', {
-        duration: 0.6,
-        scale: 0,
-        opacity: 0,
-        x: 200,
-        y: -200,
-      })
-      tlClouds.from('#cloudV2', {
-        duration: 0.6,
-        scale: 0,
-        opacity: 0,
-        x: 200,
-        y: -200,
-      })
-      tlClouds.from('#cloudH1', {
-        duration: 0.4,
-        scale: 0,
-        opacity: 0,
-        x: -200,
-        y: 200,
-      })
-      tlClouds.from('#cloudH4', {
-        duration: 0.4,
-        scale: 0,
-        opacity: 0,
-        x: -200,
-        y: -200,
-      })
-      tlClouds.from('#cloudH2', {
-        duration: 0.4,
-        scale: 0,
-        opacity: 0,
-        x: -200,
-        y: -200,
-      })
-      tlClouds.from('#cloudH3', {
-        duration: 0.4,
-        scale: 0,
-        opacity: 0,
-        x: -200,
-        y: -200,
-      })
+      tlClouds.from(
+        '#cloudH5',
+        {
+          duration: 2.5,
+          scale: 0,
+          opacity: 0,
+          x: 200,
+          y: 200,
+        },
+        '>-2.5'
+      )
+      tlClouds.from(
+        '#cloudH6',
+        {
+          duration: 2.5,
+          scale: 0,
+          opacity: 0,
+          x: 200,
+          y: -200,
+        },
+        '>-2'
+      )
+      tlClouds.from(
+        '#cloudV1',
+        {
+          duration: 2,
+          scale: 0,
+          opacity: 0,
+          x: 200,
+          y: -200,
+        },
+        '>-2'
+      )
+      tlClouds.from(
+        '#cloudV2',
+        {
+          duration: 2,
+          scale: 0,
+          opacity: 0,
+          x: 200,
+          y: -200,
+        },
+        '>-1.5'
+      )
+      tlClouds.from(
+        '#cloudH1',
+        {
+          duration: 2,
+          scale: 0,
+          opacity: 0,
+          x: -200,
+          y: 200,
+        },
+        '>-1.5'
+      )
+      tlClouds.from(
+        '#cloudH4',
+        {
+          duration: 2,
+          scale: 0,
+          opacity: 0,
+          x: -200,
+          y: -200,
+        },
+        '>-1.5'
+      )
+      tlClouds.from(
+        '#cloudH2',
+        {
+          duration: 2,
+          scale: 0,
+          opacity: 0,
+          x: -200,
+          y: -200,
+        },
+        '>-1.5'
+      )
+      tlClouds.from(
+        '#cloudH3',
+        {
+          duration: 2,
+          scale: 0,
+          opacity: 0,
+          x: -200,
+          y: -200,
+        },
+        '>-1.5'
+      )
       tlClouds.to('#textClouds', {
         text: '#clouds',
         duration: 2,

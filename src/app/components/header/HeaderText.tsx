@@ -10,6 +10,21 @@ export default function HeaderText() {
   const headerText = useRef<HTMLHeadingElement>(null)
   useGSAP(
     () => {
+      gsap.fromTo(
+        headerText.current,
+        {
+          yPercent: 100,
+          display: 'block',
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          delay: 0.1,
+          ease: 'none',
+          duration: 1,
+          yPercent: 0,
+        }
+      )
       gsap.to(headerText.current, {
         scrollTrigger: {
           trigger: headerText.current,
@@ -17,6 +32,7 @@ export default function HeaderText() {
           endTrigger: '#spinningCircles',
           toggleActions: 'play pause resume reset',
         },
+        delay: 1.1,
         scale: '1.1',
         duration: 2,
         repeat: -1,
@@ -29,7 +45,7 @@ export default function HeaderText() {
   return (
     <h1
       ref={headerText}
-      className="text-6xl text-orange-400 text-center will-change-transform"
+      className="text-6xl  hidden  overflow-hidden text-orange-400 text-center will-change-transform"
     >
       Welcome to animated world!
     </h1>
