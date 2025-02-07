@@ -8,15 +8,15 @@ import { TextPlugin } from 'gsap/TextPlugin'
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 
 import Image from 'next/image'
-import img13 from '@/../public/images/thirdBox/13.jpg'
-import img14 from '@/../public/images/thirdBox/14.jpg'
-import img15 from '@/../public/images/thirdBox/15.jpg'
-import cloudH1 from '@/../public/images/thirdBox/clouds/hor1.jpg'
-import cloudH2 from '@/../public/images/thirdBox/clouds/hor2.jpg'
-import cloudH3 from '@/../public/images/thirdBox/clouds/hor3.jpg'
-import cloudH4 from '@/../public/images/thirdBox/clouds/hor4.jpg'
-import cloudV1 from '@/../public/images/thirdBox/clouds/vert1.jpg'
-import cloudV2 from '@/../public/images/thirdBox/clouds/vert2.jpg'
+import cloudH5 from '@/../public/images/slidesImages/clouds/hor5.jpg'
+import cloudH6 from '@/../public/images/slidesImages/clouds/hor6.jpg'
+import cloudV3 from '@/../public/images/slidesImages/clouds/vert3.jpg'
+import cloudH1 from '@/../public/images/slidesImages/clouds/hor1.jpg'
+import cloudH2 from '@/../public/images/slidesImages/clouds/hor2.jpg'
+import cloudH3 from '@/../public/images/slidesImages/clouds/hor3.jpg'
+import cloudH4 from '@/../public/images/slidesImages/clouds/hor4.jpg'
+import cloudV1 from '@/../public/images/slidesImages/clouds/vert1.jpg'
+import cloudV2 from '@/../public/images/slidesImages/clouds/vert2.jpg'
 export default function Clouds() {
   const clouds = useRef(null)
   useGSAP(
@@ -28,63 +28,63 @@ export default function Clouds() {
         },
         ease: 'power1.inOut',
       })
-      tlClouds.from('#img15', {
-        duration: 2,
+      tlClouds.from('#cloudV3', {
+        duration: 1,
         scale: 0,
         opacity: 0,
         x: 400,
       })
-      tlClouds.from('#img13', {
-        duration: 1.5,
+      tlClouds.from('#cloudH5', {
+        duration: 0.8,
         scale: 0,
         opacity: 0,
         x: 200,
         y: 200,
       })
-      tlClouds.from('#img14', {
-        duration: 1.5,
+      tlClouds.from('#cloudH6', {
+        duration: 0.8,
         scale: 0,
         opacity: 0,
         x: 200,
         y: -200,
       })
       tlClouds.from('#cloudV1', {
-        duration: 1,
+        duration: 0.6,
         scale: 0,
         opacity: 0,
         x: 200,
         y: -200,
       })
       tlClouds.from('#cloudV2', {
-        duration: 1,
+        duration: 0.6,
         scale: 0,
         opacity: 0,
         x: 200,
         y: -200,
       })
       tlClouds.from('#cloudH1', {
-        duration: 0.5,
+        duration: 0.4,
         scale: 0,
         opacity: 0,
         x: -200,
         y: 200,
       })
       tlClouds.from('#cloudH4', {
-        duration: 0.5,
+        duration: 0.4,
         scale: 0,
         opacity: 0,
         x: -200,
         y: -200,
       })
       tlClouds.from('#cloudH2', {
-        duration: 0.5,
+        duration: 0.4,
         scale: 0,
         opacity: 0,
         x: -200,
         y: -200,
       })
       tlClouds.from('#cloudH3', {
-        duration: 0.5,
+        duration: 0.4,
         scale: 0,
         opacity: 0,
         x: -200,
@@ -92,7 +92,7 @@ export default function Clouds() {
       })
       tlClouds.to('#textClouds', {
         text: '#clouds',
-        duration: 3,
+        duration: 2,
         ease: 'none',
       })
     },
@@ -147,25 +147,25 @@ export default function Clouds() {
         alt="cloudV2"
       />
       <Image
-        id="img13"
+        id="cloudH5"
         loading="lazy"
         className=" row-span-2 col-span-2 object-cover w-full h-full "
-        src={img13}
-        alt="img13"
+        src={cloudH5}
+        alt="cloudH5"
       />
       <Image
-        id="img14"
+        id="cloudH6"
         loading="lazy"
         className=" row-span-2 col-span-2 object-cover  w-full h-full  "
-        src={img14}
-        alt="img14"
+        src={cloudH6}
+        alt="cloudH6"
       />
       <Image
-        id="img15"
+        id="cloudV3"
         loading="lazy"
         className="row-span-4 col-span-2 object-cover w-full h-full "
-        src={img15}
-        alt="img15"
+        src={cloudV3}
+        alt="cloudV3"
       />
       <p
         id="textClouds"

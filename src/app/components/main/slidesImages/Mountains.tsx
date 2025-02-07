@@ -7,10 +7,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 import Image from 'next/image'
-import img1 from '@/../public/images/thirdBox/1.jpg'
-import img2 from '@/../public/images/thirdBox/2.jpg'
-import img3 from '@/../public/images/thirdBox/3.jpg'
+import mountain1 from '@/../public/images/slidesImages/mountains/1.jpg'
+import mountain2 from '@/../public/images/slidesImages/mountains/2.jpg'
+import mountain3 from '@/../public/images/slidesImages/mountains/3.jpg'
 
+const mountainsArr: IImage[] = [
+  { url: mountain1, alt: 'mountain1' },
+  { url: mountain2, alt: 'mountain2' },
+  { url: mountain3, alt: 'mountain3' },
+]
 export default function Mountains() {
   const mountains = useRef(null)
   useGSAP(
@@ -24,7 +29,7 @@ export default function Mountains() {
         ease: 'none',
       })
       tlPanel1.fromTo(
-        '#img1',
+        '#mountain1',
         {
           opacity: 0,
           scale: 0,
@@ -39,7 +44,7 @@ export default function Mountains() {
         }
       )
       tlPanel1.fromTo(
-        '#img2',
+        '#mountain2',
         {
           opacity: 0,
           scale: 0,
@@ -62,27 +67,18 @@ export default function Mountains() {
       className="slideImages relative flex justify-center items-center
    text-4xl px-10 py-12 gap-10 min-w-[100vw] h-[100vh] overflow-hidden bg-stone-300/80"
     >
-      <Image
-        id="img1"
-        loading="lazy"
-        className="w-auto max-w-[20vw]  absolute max-h-[70vh] object-cover rounded-2xl"
-        src={img1}
-        alt="img1"
-      />
-      <Image
-        id="img2"
-        loading="lazy"
-        className="w-auto max-w-[20vw] absolute max-h-[70vh] object-cover rounded-2xl"
-        src={img2}
-        alt="img2"
-      />
-      <Image
-        id="img3"
-        loading="lazy"
-        className="w-auto max-w-[20vw]  absolute max-h-[80vh] object-cover rounded-2xl"
-        src={img3}
-        alt="img3"
-      />
+      {mountainsArr.map((mountain) => {
+        return (
+          <Image
+            key={mountain.alt}
+            id={mountain.alt}
+            loading="lazy"
+            className="w-auto max-w-[20vw]  absolute max-h-[70vh] object-cover rounded-2xl"
+            src={mountain.url}
+            alt={mountain.alt}
+          />
+        )
+      })}
     </article>
   )
 }

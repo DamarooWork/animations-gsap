@@ -7,11 +7,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 import Image from 'next/image'
-import img4 from '@/../public/images/thirdBox/4.jpg'
-import img5 from '@/../public/images/thirdBox/5.jpg'
-import img10 from '@/../public/images/thirdBox/10.jpg'
-import img11 from '@/../public/images/thirdBox/11.jpg'
-import img12 from '@/../public/images/thirdBox/12.jpg'
+import img4 from '@/../public/images/slidesImages/cars/4.jpg'
+import img5 from '@/../public/images/slidesImages/cars/5.jpg'
+import img10 from '@/../public/images/slidesImages/cars/10.jpg'
+import img11 from '@/../public/images/slidesImages/cars/11.jpg'
+import img12 from '@/../public/images/slidesImages/cars/12.jpg'
 
 export default function Cars() {
   const cars = useRef(null)

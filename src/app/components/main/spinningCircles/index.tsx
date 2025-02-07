@@ -62,7 +62,7 @@ export default function SpinningCircles() {
       ref={spinningCircles}
       id="spinningCircles"
       className="mt-[50vh] flex 
-       gap-10  justify-center items-center text-orange-300"
+       gap-[2vw]  justify-center items-center text-orange-300"
     >
       <p className="relative flex-[3, 3, 0%] text-center w-[10vw] h-[10vw]  border-orange-400 border-2 rounded-full p-10 will-change-transform ">
         <span
