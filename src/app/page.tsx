@@ -2,7 +2,7 @@
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 
-import SpinningCircles from './components/main/spinningCircles'
+import SpinningCircles from './components/main/gsapCircles'
 import SlidesText from './components/main/slidesText'
 import SlidesImages from './components/main/slidesImages'
 import OceanCircles from './components/main/oceanCircles'

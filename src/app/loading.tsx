@@ -1,7 +1,11 @@
 export default function loading() {
   return (
     <section className="flex w-full h-full justify-center items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150">
+      <svg
+        className="max-w-[300px] h-auto"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 300 150"
+      >
         <path
           fill="none"
           stroke="#FB923C"
