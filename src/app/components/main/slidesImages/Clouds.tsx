@@ -30,7 +30,7 @@ export default function Clouds() {
       })
       tlClouds.from('#cloudV3', {
         duration: 3,
-        scale: 0,
+        scale: 1.4,
         opacity: 0,
         x: 400,
       })
@@ -38,7 +38,7 @@ export default function Clouds() {
         '#cloudH5',
         {
           duration: 2.5,
-          scale: 0,
+          scale: 1.4,
           opacity: 0,
           x: 200,
           y: 200,
@@ -49,7 +49,7 @@ export default function Clouds() {
         '#cloudH6',
         {
           duration: 2.5,
-          scale: 0,
+          scale: 1.4,
           opacity: 0,
           x: 200,
           y: -200,
@@ -60,7 +60,7 @@ export default function Clouds() {
         '#cloudV1',
         {
           duration: 2,
-          scale: 0,
+          scale: 1.4,
           opacity: 0,
           x: 200,
           y: -200,
@@ -71,7 +71,7 @@ export default function Clouds() {
         '#cloudV2',
         {
           duration: 2,
-          scale: 0,
+          scale: 1.4,
           opacity: 0,
           x: 200,
           y: -200,
@@ -82,7 +82,7 @@ export default function Clouds() {
         '#cloudH1',
         {
           duration: 2,
-          scale: 0,
+          scale: 1.4,
           opacity: 0,
           x: -200,
           y: 200,
@@ -93,7 +93,7 @@ export default function Clouds() {
         '#cloudH4',
         {
           duration: 2,
-          scale: 0,
+          scale: 1.4,
           opacity: 0,
           x: -200,
           y: -200,
@@ -104,7 +104,7 @@ export default function Clouds() {
         '#cloudH2',
         {
           duration: 2,
-          scale: 0,
+          scale: 1.4,
           opacity: 0,
           x: -200,
           y: -200,
@@ -115,18 +115,22 @@ export default function Clouds() {
         '#cloudH3',
         {
           duration: 2,
-          scale: 0,
+          scale: 1.4,
           opacity: 0,
           x: -200,
           y: -200,
         },
         '>-1.5'
       )
-      tlClouds.to('#textClouds', {
-        text: '#clouds',
-        duration: 2,
-        ease: 'none',
-      })
+      tlClouds.to(
+        '#textClouds',
+        {
+          text: '#clouds',
+          duration: 2,
+          ease: 'none',
+        },
+        '>-1.2'
+      )
     },
     { scope: clouds }
   )

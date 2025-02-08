@@ -27,7 +27,7 @@ export default function Cars() {
       const tlCars = gsap.timeline({
         scrollTrigger: {
           trigger: cars.current,
-          start: '30% 0',
+          start: '+=' + window.innerWidth / 4,
         },
       })
       tlCars.fromTo(

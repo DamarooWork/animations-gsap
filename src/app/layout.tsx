@@ -15,7 +15,7 @@ export default function DashboardLayout({
         <title>Animated world</title>
       </head>
       <body>
-        <Suspense fallback={<Loading/>}> 
+        <Suspense fallback={<Loading />}>
           <Header />
           <main className="mt-20">{children}</main>
         </Suspense>

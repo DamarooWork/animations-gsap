@@ -25,9 +25,6 @@ export default function People() {
   const peopleRefs = useRef<HTMLImageElement[]>([])
   useGSAP(
     () => {
-      console.log(window.innerHeight * 2, window.innerWidth, window.innerHeight)
-
-      // const images = gsap.utils.toArray('.person')
       gsap.to(people.current, {
         scrollTrigger: {
           trigger: people.current,
@@ -45,18 +42,17 @@ export default function People() {
         },
       })
       tlPeople.to(people.current, {
-        delay: 2,
+        delay: 0.8,
       })
       peopleRefs.current.toReversed().forEach((img) => {
         tlPeople.fromTo(
           img,
           {
             position: 'absolute',
-            // x: () => '+=' + window.innerWidth / 5,
             width: '100%',
             height: 'auto',
             opacity: 0.8,
-            scale: 1.2,
+            scale: 1.1,
           },
           {
             position: 'absolute',
@@ -66,9 +62,10 @@ export default function People() {
             ease: 'power3.out',
             zIndex: 10,
           },
-          '>-1.2'
+          '>-1'
         )
       })
+
       peopleRefs.current.forEach((img) => {
         tlPeople.fromTo(
           img,
@@ -91,47 +88,15 @@ export default function People() {
           '>-1'
         )
       })
-      // tlPeople.from('#person5', {
-      //   delay: 1.5,
-      //   display: 'absolute',
-      //   duration: 1,
-      //   rotateZ: 10,
-      //   scale: 0.2,
-      //   y: () => '+=' + window.innerHeight / 2,
-      //   x: () => '-=' + window.innerWidth / 4,
-      // })
-      // tlPeople.from('#person4', {
-      //   display: 'absolute',
-      //   duration: 0.8,
-      //   rotateZ: 20,
-      //   scale: 0.2,
-      //   y: () => '+=' + window.innerHeight / 2,
-      //   x: () => '-=' + window.innerWidth / 4,
-      // })
-      // tlPeople.from('#person3', {
-      //   display: 'absolute',
-      //   duration: 0.6,
-      //   rotateZ: 0,
-      //   scale: 0.2,
-      //   y: () => '+=' + window.innerHeight / 2,
-      //   x: 0,
-      // })
-      // tlPeople.from('#person2', {
-      //   display: 'absolute',
-      //   duration: 0.5,
-      //   rotateZ: -10,
-      //   scale: 0.2,
-      //   y: () => '+=' + window.innerHeight / 2,
-      //   x: () => '+=' + window.innerWidth / 4,
-      // })
-      // tlPeople.from('#person1', {
-      //   display: 'absolute',
-      //   duration: 0.4,
-      //   rotateZ: -20,
-      //   scale: 0.2,
-      //   y: () => '+=' + window.innerHeight / 2,
-      //   x: () => '+=' + window.innerWidth / 4,
-      // })
+      tlPeople.to(
+        '#textPeople',
+        {
+          text: '#person',
+          duration: 1,
+          ease: 'power1.inOut',
+        },
+        '>-1.2'
+      )
     },
     { scope: people }
   )
@@ -158,6 +123,10 @@ export default function People() {
           />
         )
       })}
+      <p
+        id="textPeople"
+        className="text-6xl text-orange-400 italic font-semibold absolute top-[20%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-50"
+      ></p>
     </article>
   )
 }

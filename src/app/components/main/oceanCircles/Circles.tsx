@@ -66,7 +66,7 @@ export default function Circles({ images }: { images: IImage[] }) {
   return (
     <section
       ref={circlesComp}
-      className="circles mt-[10vh] h-[90vh]  relative flex justify-center "
+      className="circles mt-[10vh] h-[90vh] relative flex justify-center"
     >
       {images.map((img: IImage, i: number) => {
         return (
@@ -79,9 +79,7 @@ export default function Circles({ images }: { images: IImage[] }) {
             key={img.alt}
             src={img.url}
             alt={img.alt}
-            className="circle 
-                 absolute top-[50%] left-[50%] rounded-full
-                  w-[12vh] h-[12vh] lg:w-60 lg:h-60 object-cover"
+            className="circle absolute top-[50%] left-[50%] rounded-full w-[12vh] h-[12vh] lg:w-60 lg:h-60 object-cover"
           />
         )
       })}
