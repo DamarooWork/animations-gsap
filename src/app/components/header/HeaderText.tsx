@@ -12,13 +12,13 @@ export default function HeaderText() {
   useGSAP(
     () => {
       gsap.from(spanText.current, {
-        delay: 1,
+        delay: 0.3,
         yPercent: 100,
         duration: 1,
         ease: 'none',
       })
       gsap.to(headerText.current, {
-        delay: 2,
+        delay: 1.3,
         duration: 0,
         overflow: 'visible',
       })
@@ -29,7 +29,7 @@ export default function HeaderText() {
           endTrigger: '#gsapCircles',
           toggleActions: 'play pause resume reset',
         },
-        delay: 2,
+        delay: 1.3,
         scale: '1.1',
         duration: 2,
         repeat: -1,
@@ -45,7 +45,7 @@ export default function HeaderText() {
       className="text-6xl overflow-hidden text-orange-400 text-center"
     >
       <span ref={spanText} className="block will-change-transform">
-        Damaroo's animated world
+        Damaroo&#39;s animated world
       </span>
     </h1>
   )
