@@ -5,34 +5,81 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { useRef } from 'react'
 gsap.registerPlugin(useGSAP, ScrollToPlugin)
 
+interface IHashLink {
+  hash: string
+  title: string
+}
+const linksArr: IHashLink[] = [
+  {
+    hash: '0',
+    title: '#Home',
+  },
+  {
+    hash: '#gsapCircles',
+    title: '#GSAP Circles',
+  },
+  {
+    hash: '#slidesText',
+    title: '#What is GSAP?',
+  },
+  {
+    hash: '#slidesImages',
+    title: '#Animations with images',
+  },
+  {
+    hash: '#oceanCircles',
+    title: '#Oceans',
+  },
+]
 export default function Links() {
-  const links = useRef<HTMLElement>(null)
-  // gsap.from(links.current, {
-  //   delay: 0.6,
-  //   display: 'block',
-  //   yPercent: 100,
-  //   duration: 1,
-  //   ease: 'none',
-  // })
+  const refNav = useRef<HTMLElement>(null)
+  const refLinks = useRef<HTMLButtonElement[]>([])
+  useGSAP(
+    () => {
+      refLinks.current.forEach((link) => {
+        gsap.from(link, {
+          delay: 0.6,
+          yPercent: 100,
+          duration: 0.7,
+          ease: 'none',
+        })
+      })
+    },
+    { scope: refNav }
+  )
+
   function handleLinkClick(link: string) {
-    gsap.to(window, { duration: 1, scrollTo: { y: link }, ease: 'power2' })
+    gsap.to(window, {
+      duration: 1.5,
+      scrollTo: { y: link },
+      ease: 'power2.inOut',
+    })
   }
   return (
     <nav
-      ref={links}
-      className="fixed text-xl z-40 top-10 left-10 flex flex-col gap-4 justify-start items-start text-orange-400 font-bold"
+      ref={refNav}
+      className="fixed text-xl z-40 top-10 right-0 text-orange-400 font-bold "
     >
-      <button onClick={() => handleLinkClick('0')}>Home</button>
-      <button onClick={() => handleLinkClick('#gsapCircles')}>
-        GSAP Circles
-      </button>
-      <button onClick={() => handleLinkClick('#slidesText')}>
-        What is GSAP?
-      </button>
-      <button onClick={() => handleLinkClick('#slidesImages')}>
-        Animations with images
-      </button>
-      <button onClick={() => handleLinkClick('#oceanCircles')}>Oceans</button>
+      {linksArr.map((link, i) => {
+        return (
+          <a
+            key={link.hash}
+            className="flex flex-col  justify-start items-end overflow-hidden"
+          >
+            <button
+              ref={(node) => {
+                if (node) {
+                  refLinks.current[i] = node
+                }
+              }}
+              onClick={() => handleLinkClick(link.hash)}
+              className="block transition-[border] duration-500 hover:border-l-orange-400 border-l-8 border-black bg-black p-1 hjover:p-2 rounded-l-sm"
+            >
+              {link.title}
+            </button>
+          </a>
+        )
+      })}
     </nav>
   )
 }
