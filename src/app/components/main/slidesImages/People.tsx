@@ -21,19 +21,36 @@ const peopleArr: IImage[] = [
   { url: person5, alt: 'person5' },
 ]
 export default function People() {
-  const people = useRef(null)
+  const people = useRef<HTMLElement>(null)
   const peopleRefs = useRef<HTMLImageElement[]>([])
   useGSAP(
     () => {
-      // const images = gsap.utils.toArray('.person')
+      console.log(
+        people.current?.offsetHeight,
+        window.innerWidth,
+        window.innerHeight
+      )
 
+      // const images = gsap.utils.toArray('.person')
+      const tlPanel1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: people.current,
+          snap: 1 / 2,
+          start: () =>
+            '+=' + (window.innerHeight + window.innerWidth/ 2),
+          end: () => '+=' + window.innerHeight,
+          markers: true,
+          id: 'snap',
+        },
+        ease: 'none',
+      })
       const tlPeople = gsap.timeline({
         scrollTrigger: {
           trigger: people.current,
-          start: () => {
-            console.log(window.innerWidth, innerHeight)
-            return '+=' + window.innerHeight * 2
-          },
+          start: () => '+=' + (window.innerWidth * 3) / 4,
+          end: () => '+=' + window.innerHeight,
+          markers: true,
+          id: 'people',
         },
       })
       tlPeople.to(people.current, {
