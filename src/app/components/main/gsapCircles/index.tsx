@@ -68,7 +68,7 @@ export default function GsapCircles() {
     <section
       ref={gsapCircles}
       id="gsapCircles"
-      className="mt-[50vh] flex gap-[2vw]  justify-center items-center text-orange-300"
+      className="mt-[50vh]   sm:text-2xl flex gap-[2vw]  justify-center items-center text-orange-300"
     >
       {circlesArr.map((circle) => {
         return (

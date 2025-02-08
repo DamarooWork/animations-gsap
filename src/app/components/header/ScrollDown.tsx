@@ -30,12 +30,20 @@ export default function ScrollDown() {
     },
     { scope: scrollDown }
   )
+  function handleClick() {
+    gsap.to(window, {
+      duration: 0.8,
+      scrollTo: { y: '#gsapCircles' },
+      ease: 'power2.inOut',
+    })
+  }
   return (
     <>
       {show < 300 ? (
         <section
+          onClick={handleClick}
           ref={scrollDown}
-          className="flex flex-col items-center gap-2 text-2xl fixed top-[80vh] lg:top-[90vh] left-[50%] translate-x-[-50%] overflow-hidden"
+          className="flex flex-col items-center gap-2 text-2xl fixed top-[80vh] lg:top-[90vh] left-[50%] translate-x-[-50%] overflow-hidden cursor-pointer"
         >
           <p className="text-orange-400 block">Scroll down</p>
           <Image

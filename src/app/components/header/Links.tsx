@@ -58,13 +58,13 @@ export default function Links() {
   return (
     <nav
       ref={refNav}
-      className="fixed text-xl z-40 top-10 right-0 text-orange-400 font-bold "
+      className="fixed text-sm sm:text-xl z-40 top-2 sm:top-10 right-0 text-orange-400 font-bold  "
     >
       {linksArr.map((link, i) => {
         return (
           <a
             key={link.hash}
-            className="flex flex-col  justify-start items-end overflow-hidden"
+            className="flex flex-col  justify-start items-end overflow-hidden "
           >
             <button
               ref={(node) => {
@@ -73,7 +73,7 @@ export default function Links() {
                 }
               }}
               onClick={() => handleLinkClick(link.hash)}
-              className="block transition-[border] duration-500 hover:border-l-orange-400 border-l-8 border-black bg-black p-1 hjover:p-2 rounded-l-sm"
+              className="block transition-[border]  duration-300 hover:border-l-orange-400 border-l-8 border-black bg-black p-1 hjover:p-2 rounded-l-sm hover:opacity-100 opacity-60"
             >
               {link.title}
             </button>
