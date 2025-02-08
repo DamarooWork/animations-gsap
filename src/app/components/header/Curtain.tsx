@@ -23,7 +23,7 @@ export default function Curtain() {
   return (
     <div
       ref={curtain}
-      className="fixed top-0 left-0 w-full h-full bg-black"
+      className="fixed top-0 left-0 w-full h-full bg-black z-50"
     ></div>
   )
 }
