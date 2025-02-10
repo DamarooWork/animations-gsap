@@ -20,7 +20,7 @@ const bubbles = [
   { id: 6, bottom: '31vh', left: '20vw', width: '50px', height: '50px' },
   { id: 7, bottom: '-30vh', left: '50vw', width: '50px', height: '50px' },
   { id: 8, bottom: '-50vh', left: '20vw', width: '50px', height: '50px' },
-  { id: 9, bottom: '-50vh', left: '60vw', width: '12px', height: '50px' },
+  { id: 9, bottom: '-50vh', left: '65vw', width: '6px', height: '100px' },
 ]
 
 export default function GsapCircles() {
