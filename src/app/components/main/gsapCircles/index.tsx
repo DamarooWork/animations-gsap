@@ -1,6 +1,6 @@
 'use client'
 import { useRef } from 'react'
-import gsap, { TweenLite } from 'gsap'
+import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
