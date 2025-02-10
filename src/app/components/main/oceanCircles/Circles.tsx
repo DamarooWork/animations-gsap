@@ -18,12 +18,11 @@ export default function Circles({ images }: { images: IImage[] }) {
         let degMinus = -1 * degPlus
         const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: '#images',
+            trigger: circlesComp.current,
+            toggleActions: 'play pause resume reset',
           },
           repeat: -1,
-
-          ease: 'none',
-          delay: 0,
+          ease: 'power3.inOut',
         })
         tl.to(element, {
           transform: `translate(-50%, -50%) rotate(${degPlus}deg)

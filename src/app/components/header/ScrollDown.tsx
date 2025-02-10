@@ -21,7 +21,7 @@ export default function ScrollDown() {
   useGSAP(
     () => {
       gsap.from(scrollDown.current, {
-        delay: 0.8,
+        delay: 2.6,
         yPercent: 50,
         duration: 0.5,
         ease: 'none',
@@ -32,7 +32,7 @@ export default function ScrollDown() {
   )
   function handleClick() {
     gsap.to(window, {
-      duration: 0.8,
+      duration: 1.8,
       scrollTo: { y: '#gsapCircles' },
       ease: 'power2.inOut',
     })

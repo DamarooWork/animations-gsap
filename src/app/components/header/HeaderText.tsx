@@ -12,24 +12,23 @@ export default function HeaderText() {
   useGSAP(
     () => {
       gsap.from(spanText.current, {
-        delay: 0.3,
+        delay: 2.1,
         yPercent: 100,
         duration: 1,
         ease: 'none',
       })
       gsap.to(headerText.current, {
-        delay: 1.3,
+        delay: 3.1,
         duration: 0,
         overflow: 'visible',
       })
       gsap.to(headerText.current, {
         scrollTrigger: {
           trigger: headerText.current,
-          end: '20% 50%',
-          endTrigger: '#gsapCircles',
+
           toggleActions: 'play pause resume reset',
         },
-        delay: 1.3,
+        delay: 3.1,
         scale: '1.1',
         duration: 2,
         repeat: -1,

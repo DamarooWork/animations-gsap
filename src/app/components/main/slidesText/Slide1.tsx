@@ -34,7 +34,7 @@ export default function Slide1() {
     <section
       ref={slide1}
       className="slide max-lg:flex max-lg:flex-col max-lg:justify-center
-   p-[10vw]  min-w-[100vw] h-[100vh] bg-orange-500/80"
+   p-[10vw]  min-w-[100vw] h-[100vh] bg-orange-500/80 text-white"
     >
       <p className="text1 mb-[5vh]"></p>
       <p className="text2"></p>

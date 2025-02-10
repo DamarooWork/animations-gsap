@@ -38,7 +38,7 @@ export default function Links() {
     () => {
       refLinks.current.forEach((link) => {
         gsap.from(link, {
-          delay: 0.6,
+          delay: 2.4,
           yPercent: 100,
           duration: 0.7,
           ease: 'none',
@@ -50,7 +50,7 @@ export default function Links() {
 
   function handleLinkClick(link: string) {
     gsap.to(window, {
-      duration: 1.5,
+      duration: 3.3,
       scrollTo: { y: link },
       ease: 'power2.inOut',
     })
