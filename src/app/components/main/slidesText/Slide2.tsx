@@ -34,7 +34,7 @@ export default function Slide2() {
     <section
       ref={slide2}
       className="slide max-lg:flex max-lg:flex-col max-lg:justify-center
-   p-[5vw]  min-w-[100vw] h-[100vh] bg-violet-500/60"
+   p-[5vw]  min-w-[100vw] h-[100vh]  bg-gradient-to-tl from-violet-300/60 to-violet-600/60"
     >
       <p className="text3 mb-[5vh]"></p>
       <p className="text4"></p>

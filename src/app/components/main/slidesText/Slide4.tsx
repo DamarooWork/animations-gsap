@@ -48,7 +48,7 @@ export default function Slide4() {
     <section
       ref={slide4}
       className="slide max-lg:flex max-lg:flex-col max-lg:justify-center
-     p-[5vw]  min-w-[100vw] h-[100vh] bg-blue-500/60"
+     p-[5vw]  min-w-[100vw] h-[100vh]    bg-gradient-to-tl from-blue-300/60 to-blue-700/60"
     >
       <p className="text7 mb-[5vh]"></p>
       <p className="text8 mb-[5vh]"></p>
