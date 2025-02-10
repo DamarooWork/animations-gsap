@@ -62,7 +62,7 @@ export default function GsapCircles() {
         ease: 'power1.inOut',
       })
       tl.to(scrolling.current, {
-        duration: 6,
+        duration: 4,
         x: () => '+=' + '40vw',
         rotation: '-=1440',
         ease: 'power2.inOut',
@@ -75,17 +75,14 @@ export default function GsapCircles() {
       })
 
       tl.to('#First', {
-        duration: 2,
         text: 'Welcome',
         ease: 'power1.inOut',
       })
       tl.to('#Second', {
-        duration: 2,
         text: 'To',
         ease: 'power1.inOut',
       })
       tl.to('#Third', {
-        duration: 2,
         text: 'GSAP!',
         ease: 'power1.inOut',
       })
