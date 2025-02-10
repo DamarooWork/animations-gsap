@@ -1,5 +1,5 @@
 'use client'
-import { useRef } from 'react'
+import { memo, useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -23,7 +23,7 @@ const bubbles = [
   { id: 9, bottom: '-50vh', left: '65vw', width: '6px', height: '100px' },
 ]
 
-export default function GsapCircles() {
+function GsapCircles() {
   const gsapCircles = useRef<HTMLElement>(null)
   const scrolling = useRef<HTMLDivElement>(null)
   useGSAP(
@@ -137,3 +137,4 @@ export default function GsapCircles() {
     </section>
   )
 }
+export default GsapCircles

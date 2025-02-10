@@ -11,7 +11,6 @@ import Slide4 from './Slide4'
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 export default function SlidesText() {
   const slidesText = useRef<HTMLElement>(null)
-
   useGSAP(
     () => {
       const sections = gsap.utils.toArray('.slide')

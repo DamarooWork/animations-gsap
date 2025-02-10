@@ -11,7 +11,7 @@ import Clouds from './Clouds'
 import People from './People'
 import Cars from './Cars'
 
-export default function SlidesImages() {
+function SlidesImages() {
   const slidesImages = useRef<HTMLElement>(null)
   useGSAP(
     () => {
@@ -43,3 +43,5 @@ export default function SlidesImages() {
     </article>
   )
 }
+
+export default SlidesImages

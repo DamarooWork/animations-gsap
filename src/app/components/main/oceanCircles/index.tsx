@@ -16,6 +16,7 @@ const imagesArr: IImage[] = [
 ]
 
 export default function OceanCircles() {
+
   return (
     <article id="oceanCircles" className="mt-[20vh] mb-[10vh] ">
       <Header />
