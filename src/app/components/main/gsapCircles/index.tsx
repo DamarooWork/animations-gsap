@@ -90,10 +90,10 @@ function GsapCircles() {
     { scope: gsapCircles }
   )
   return (
-    <section
+    <article
       ref={gsapCircles}
       id="gsapCircles"
-      className="mt-[30vh] h-[100vh] relavite  sm:text-2xl  text-orange-300 flex justify-center items-center overflow-hidden"
+      className="mt-[30vh] h-screen relavite  sm:text-2xl  text-orange-300 flex justify-center items-center overflow-hidden"
     >
       {bubbles.map((bubble) => {
         return (
@@ -110,7 +110,7 @@ function GsapCircles() {
         )
       })}
 
-      <div
+      <section
         ref={scrolling}
         className=" flex gap-[2vw] justify-center items-center "
       >
@@ -133,8 +133,8 @@ function GsapCircles() {
             </div>
           )
         })}
-      </div>
-    </section>
+      </section>
+    </article>
   )
 }
 export default GsapCircles

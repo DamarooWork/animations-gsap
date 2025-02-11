@@ -95,7 +95,7 @@ export default function Cars() {
     <article
       ref={cars}
       id="cars"
-      className="slideImages relative flex justify-center items-center text-4xl px-10 py-12 min-w-[100vw] h-[100vh] overflow-hidden bg-green-400/50"
+      className="slideImages relative min-w-[100vw] h-screen flex justify-center items-center text-4xl px-10 py-12  overflow-hidden bg-green-400/50"
     >
       {carsArr.map((car, i) => {
         return (

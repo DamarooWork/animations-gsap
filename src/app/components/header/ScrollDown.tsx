@@ -43,7 +43,7 @@ export default function ScrollDown() {
         <section
           onClick={handleClick}
           ref={scrollDown}
-          className="flex flex-col items-center gap-2 text-2xl fixed top-[80vh] lg:top-[90vh] left-[50%] translate-x-[-50%] overflow-hidden cursor-pointer"
+          className="flex flex-col items-center gap-2 text-2xl fixed top-[80vh] lg:top-[90vh] left-1/2 -translate-x-1/2 overflow-hidden cursor-pointer"
         >
           <p className="text-orange-400 block">Scroll down</p>
           <Image

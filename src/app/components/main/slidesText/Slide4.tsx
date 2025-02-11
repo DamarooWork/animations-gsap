@@ -47,10 +47,10 @@ export default function Slide4() {
   return (
     <section
       ref={slide4}
-      className="slide max-lg:flex max-lg:flex-col max-lg:justify-center
-     p-[5vw]  min-w-[100vw] h-[100vh]    bg-gradient-to-tl from-blue-300/60 to-blue-700/60"
+      className="slide  max-lg:flex max-lg:flex-col max-lg:justify-center
+     p-[5vw]  min-w-[100vw] h-screen bg-gradient-to-tl from-blue-300/60 to-blue-700/60"
     >
-      <p className="text7 mb-[5vh]"></p>
+      <h3 className="text7 mb-[5vh]"></h3>
       <p className="text8 mb-[5vh]"></p>
       <p className="text9 mb-[5vh]"></p>
       <p className="text10"></p>

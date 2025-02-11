@@ -5,7 +5,7 @@ import ScrollDown from './ScrollDown'
 
 export default function Header() {
   return (
-    <header className="w-full h-[100vh] flex justify-center items-center ">
+    <header className="min-h-screen flex justify-center items-center ">
       <Links/>
       <HeaderText />
       <ScrollDown />

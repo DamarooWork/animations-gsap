@@ -64,8 +64,8 @@ export default function Mountains() {
   return (
     <article
       ref={mountains}
-      className="slideImages relative flex justify-center items-center
-   text-4xl px-10 py-12 gap-10 min-w-[100vw] h-[100vh] overflow-hidden bg-stone-300/80"
+      className="slideImages min-w-[100vw] h-screen relative flex justify-center items-center
+   text-4xl px-10 py-12 gap-10 overflow-hidden bg-stone-300/80"
     >
       {mountainsArr.map((mountain) => {
         return (

@@ -32,7 +32,7 @@ export default function SlidesText() {
     <article
       ref={slidesText}
       id="slidesText"
-      className="mt-[20vh] text-2xl sm:text-4xl lg:text-5xl xl:text-6xl lg:leading-[1.5] overflow-hidden flex  h-[100vh] "
+      className="mt-[20vh] h-screen flex text-2xl sm:text-4xl lg:text-5xl xl:text-6xl lg:leading-[1.5] overflow-hidden    "
     >
       <Slide1 />
       <Slide2 />

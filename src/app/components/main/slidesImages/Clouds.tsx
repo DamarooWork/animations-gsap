@@ -138,7 +138,7 @@ export default function Clouds() {
     <article
       ref={clouds}
       id="clouds"
-      className="slideImages relative grid grid-flow-col grid-rows-4 grid-cols-6 gap-0 overflow-hidden  min-w-[100vw] h-[100vh] bg-red-500/50"
+      className="slideImages relative min-w-[100vw] h-screen grid grid-flow-col grid-rows-4 grid-cols-6 gap-0 overflow-hidden  bg-red-500/50"
     >
       <Image
         id="cloudH1"

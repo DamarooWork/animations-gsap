@@ -104,7 +104,7 @@ export default function People() {
     <article
       ref={people}
       id="people"
-      className="slideImages relative flex justify-start items-center    min-w-[100vw] h-[100vh] overflow-hidden bg-cyan-400/50"
+      className="slideImages relative min-w-[100vw] h-screen flex justify-start items-center overflow-hidden bg-cyan-400/50"
     >
       {peopleArr.map((person, i) => {
         return (
