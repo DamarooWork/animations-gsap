@@ -26,7 +26,6 @@ export default function Mountains() {
           snap: 1 / 2,
           end: () => '+=' + window.innerHeight,
         },
-        ease: 'none',
       })
       tlPanel1.fromTo(
         '#mountain1',
@@ -56,7 +55,68 @@ export default function Mountains() {
           x: () => '+=' + window.innerWidth / 5,
           rotateZ: 30,
           ease: 'power2.inOut',
-        }
+        },
+        '>-0.8'
+      )
+      tlPanel1.to('#mountain1', {
+        rotateZ: 0,
+        duration: 1,
+        maxHeight: () => window.innerHeight,
+        ease: 'power2.inOut',
+      })
+      tlPanel1.to(
+        '#mountain2',
+        {
+          rotateZ: 0,
+          duration: 1,
+          maxHeight: () => window.innerHeight / 2,
+          ease: 'power2.inOut',
+        },
+        '>-0.8'
+      )
+      tlPanel1.to('#mountain1', {
+        duration: 1,
+        top: 0,
+        left: 0,
+        x: 0,
+        width: () => window.innerWidth / 3,
+        height: () => window.innerHeight,
+        borderRadius: '0',
+        ease: 'power2.inOut',
+      })
+      tlPanel1.to('#mountain2', {
+        duration: 1,
+        top: 0,
+        left: () => window.innerWidth / 3,
+        x: 0,
+        borderRadius: '0',
+        ease: 'power2.inOut',
+      })
+      tlPanel1.to(
+        '#mountain3',
+        {
+          duration: 1,
+          top: 0,
+          right: 0,
+          x: 0,
+          maxHeight: () => window.innerHeight,
+          height: () => window.innerHeight,
+          width: () => window.innerWidth / 3,
+          borderRadius: '0',
+          ease: 'power2.inOut',
+        },
+        '>-0.5'
+      )
+      tlPanel1.to(
+        '#mountain2',
+        {
+          duration: 1,
+          width: () => window.innerWidth / 3 + 1,
+          maxHeight: () => window.innerHeight,
+          height: () => window.innerHeight,
+          ease: 'expo.in',
+        },
+        '>-0.8'
       )
     },
     { scope: mountains }
@@ -64,7 +124,7 @@ export default function Mountains() {
   return (
     <article
       ref={mountains}
-      className="slideImages min-w-[100vw] h-screen relative flex justify-center items-center text-4xl px-10 py-12 gap-10 overflow-hidden bg-stone-300/80"
+      className="slideImages min-w-[100vw]  h-screen relative flex justify-center items-center text-4xl gap-10 overflow-hidden bg-stone-300/80"
     >
       {mountainsArr.map((mountain) => {
         return (
@@ -72,7 +132,7 @@ export default function Mountains() {
             key={mountain.alt}
             id={mountain.alt}
             loading="lazy"
-            className="w-auto max-w-[20vw]  absolute max-h-[70vh] object-cover rounded-2xl"
+            className="w-auto absolute max-h-[70vh] object-cover rounded-2xl"
             src={mountain.url}
             alt={mountain.alt}
           />
