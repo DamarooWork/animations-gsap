@@ -52,7 +52,7 @@ export default function Mountains() {
         {
           scale: 1,
           opacity: 1,
-          duration: 2,
+          duration: 1,
           x: () => '+=' + window.innerWidth / 5,
           rotateZ: 30,
           ease: 'power2.inOut',
@@ -64,8 +64,7 @@ export default function Mountains() {
   return (
     <article
       ref={mountains}
-      className="slideImages min-w-[100vw] h-screen relative flex justify-center items-center
-   text-4xl px-10 py-12 gap-10 overflow-hidden bg-stone-300/80"
+      className="slideImages min-w-[100vw] h-screen relative flex justify-center items-center text-4xl px-10 py-12 gap-10 overflow-hidden bg-stone-300/80"
     >
       {mountainsArr.map((mountain) => {
         return (

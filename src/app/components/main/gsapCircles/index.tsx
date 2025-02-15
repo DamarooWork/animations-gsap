@@ -26,69 +26,66 @@ const bubbles = [
 function GsapCircles() {
   const gsapCircles = useRef<HTMLElement>(null)
   const scrolling = useRef<HTMLDivElement>(null)
-  useGSAP(
-    () => {
-      const tl = gsap.timeline({
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: gsapCircles.current,
+        toggleActions: 'play pause reverse pause',
+        start: '50% 50%',
+        end: 'bottom 20%',
+        endTrigger: '#slidesText',
+        scrub: 2,
+        pin: true,
+      },
+    })
+    const bubbleArr = gsap.utils.toArray<HTMLDivElement>('.bubble')
+
+    bubbleArr.forEach((bubble) =>
+      gsap.to(bubble, {
         scrollTrigger: {
           trigger: gsapCircles.current,
           toggleActions: 'play pause reverse pause',
           start: '50% 50%',
           end: 'bottom 20%',
           endTrigger: '#slidesText',
-          scrub: 2,
-          pin: true,
+          scrub: 5,
         },
+        y: '-100vh',
       })
-      const bubbleArr = gsap.utils.toArray<HTMLDivElement>('.bubble')
+    )
 
-      bubbleArr.forEach((bubble) =>
-        gsap.to(bubble, {
-          scrollTrigger: {
-            trigger: gsapCircles.current,
-            toggleActions: 'play pause reverse pause',
-            start: '50% 50%',
-            end: 'bottom 20%',
-            endTrigger: '#slidesText',
-            scrub: 5,
-          },
-          y: '-100vh',
-        })
-      )
+    tl.to(scrolling.current, {
+      duration: 3,
+      x: () => '-=' + '20vw',
+      rotation: '+=360',
+      ease: 'power1.inOut',
+    })
+    tl.to(scrolling.current, {
+      duration: 6,
+      x: () => '+=' + '40vw',
+      rotation: '-=720',
+      ease: 'power2.inOut',
+    })
+    tl.to(scrolling.current, {
+      duration: 3,
+      x: 0,
+      rotation: '+=360',
+      ease: 'power3.inOut',
+    })
 
-      tl.to(scrolling.current, {
-        duration: 3,
-        x: () => '-=' + '20vw',
-        rotation: '+=720',
-        ease: 'power1.inOut',
-      })
-      tl.to(scrolling.current, {
-        duration: 4,
-        x: () => '+=' + '40vw',
-        rotation: '-=1440',
-        ease: 'power2.inOut',
-      })
-      tl.to(scrolling.current, {
-        duration: 3,
-        x: 0,
-        rotation: '+=720',
-        ease: 'power3.inOut',
-      })
-
-      tl.to('#First', {
-        text: 'Welcome',
-        ease: 'power1.inOut',
-      })
-      tl.to('#Second', {
-        text: 'To',
-        ease: 'power1.inOut',
-      })
-      tl.to('#Third', {
-        text: 'GSAP!',
-        ease: 'power1.inOut',
-      })
-    },
-    { scope: gsapCircles }
-  )
+    tl.to('#First', {
+      text: 'Welcome',
+      ease: 'power1.inOut',
+    })
+    tl.to('#Second', {
+      text: 'To',
+      ease: 'power1.inOut',
+    })
+    tl.to('#Third', {
+      text: 'GSAP!',
+      ease: 'power1.inOut',
+    })
+  }, {})
   return (
     <article
       ref={gsapCircles}
