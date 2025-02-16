@@ -78,7 +78,7 @@ export default function Circles({ images }: { images: IImage[] }) {
             key={img.alt}
             src={img.url}
             alt={img.alt}
-            className="circle absolute top-[50%] left-[50%] rounded-full w-[12vh] h-[12vh] lg:w-60 lg:h-60 object-cover"
+            className="absolute top-[50%] left-[50%] rounded-full w-[12vh] h-[12vh] lg:w-60 lg:h-60 object-cover"
           />
         )
       })}

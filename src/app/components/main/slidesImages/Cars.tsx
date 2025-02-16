@@ -90,12 +90,12 @@ export default function Cars() {
         }
       )
       carsRefs.current.forEach((carNode, i) => {
-        tlCars.fromTo(
+        tlCars.to(
           carNode,
-          { position: 'absolute' },
           {
-            position: 'static',
-            duration: 1,
+            top: 0,
+            left: () => (window.innerWidth / carsRefs.current.length) * i,
+            duration: 2,
             rotateZ: 0,
             ease: 'power2.inOut',
             maxWidth: () => window.innerWidth,
@@ -105,7 +105,7 @@ export default function Cars() {
             translateX: 0,
             borderRadius: 0,
           },
-          i === 0 ? '>-0' : '>-1'
+          i === 0 ? '>-0' : '>-2'
         )
       })
     },
@@ -128,7 +128,7 @@ export default function Cars() {
             key={car.alt}
             id={car.alt}
             loading="lazy"
-            className={`car w-auto absolute ${
+            className={`w-auto absolute ${
               i === 2 ? 'z-20' : i === 3 ? 'z-10' : ''
             } hover:z-50  max-w-[15vw]  max-h-[70vh] object-cover rounded-2xl`}
             src={car.url}

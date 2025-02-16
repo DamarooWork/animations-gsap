@@ -41,7 +41,7 @@ export default function Clouds() {
           scale: 1.4,
           opacity: 0,
           x: 200,
-          y: 200,
+          y: -200,
         },
         '>-2.5'
       )
@@ -52,7 +52,7 @@ export default function Clouds() {
           scale: 1.4,
           opacity: 0,
           x: 200,
-          y: -200,
+          y: 200,
         },
         '>-2'
       )
@@ -62,7 +62,7 @@ export default function Clouds() {
           duration: 2,
           scale: 1.4,
           opacity: 0,
-          x: 200,
+          x: -100,
           y: -200,
         },
         '>-2'
@@ -73,8 +73,8 @@ export default function Clouds() {
           duration: 2,
           scale: 1.4,
           opacity: 0,
-          x: 200,
-          y: -200,
+          x: -100,
+          y: 200,
         },
         '>-1.5'
       )
@@ -85,7 +85,7 @@ export default function Clouds() {
           scale: 1.4,
           opacity: 0,
           x: -200,
-          y: 200,
+          y: -200,
         },
         '>-1.5'
       )
@@ -96,7 +96,7 @@ export default function Clouds() {
           scale: 1.4,
           opacity: 0,
           x: -200,
-          y: -200,
+          y: 200,
         },
         '>-1.5'
       )
@@ -118,7 +118,7 @@ export default function Clouds() {
           scale: 1.4,
           opacity: 0,
           x: -200,
-          y: -200,
+          y: 200,
         },
         '>-1.5'
       )
