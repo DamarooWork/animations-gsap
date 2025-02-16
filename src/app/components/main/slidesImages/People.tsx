@@ -14,11 +14,11 @@ import person4 from '@/../public/images/slidesImages/people/person4.jpg'
 import person5 from '@/../public/images/slidesImages/people/person5.jpg'
 
 const peopleArr: IImage[] = [
-  { url: person1, alt: 'person1' },
-  { url: person2, alt: 'person2' },
-  { url: person3, alt: 'person3' },
-  { url: person4, alt: 'person4' },
-  { url: person5, alt: 'person5' },
+  { src: person1, alt: 'person1' },
+  { src: person2, alt: 'person2' },
+  { src: person3, alt: 'person3' },
+  { src: person4, alt: 'person4' },
+  { src: person5, alt: 'person5' },
 ]
 export default function People() {
   const people = useRef<HTMLElement>(null)
@@ -118,7 +118,7 @@ export default function People() {
             id={person.alt}
             loading="lazy"
             className={`w-1/${peopleArr.length} opacity-0 absolute block h-full object-cover`}
-            src={person.url}
+            src={person.src}
             alt={person.alt}
           />
         )

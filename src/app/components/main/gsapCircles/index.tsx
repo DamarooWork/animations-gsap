@@ -6,12 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 
-const circlesArr = [
+const circlesArr: Array<{ id: string; text: string }> = [
   { id: 'First', text: 'First!' },
   { id: 'Second', text: 'Second!' },
   { id: 'Third', text: 'Third!' },
 ]
-const bubbles = [
+const bubbles: IBubble[] = [
   { id: 1, bottom: '1vh', left: '10vw', width: '16px', height: '50px' },
   { id: 2, bottom: '10vh', left: '80vw', width: '8px', height: '60px' },
   { id: 3, bottom: '-15vh', left: '70vw', width: '50px', height: '50px' },
