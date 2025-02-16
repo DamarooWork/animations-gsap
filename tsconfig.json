@@ -23,7 +23,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "p/*": ["./public/*"]
+      "public/*": ["./public/*"]
     }
   },
   "include": [

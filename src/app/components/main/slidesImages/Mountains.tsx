@@ -12,9 +12,9 @@ import mountain2 from '@/../public/images/slidesImages/mountains/2.jpg'
 import mountain3 from '@/../public/images/slidesImages/mountains/3.jpg'
 
 const mountainsArr: IImage[] = [
-  { url: mountain1, alt: 'mountain1' },
-  { url: mountain2, alt: 'mountain2' },
-  { url: mountain3, alt: 'mountain3' },
+  { src: mountain1, alt: 'mountain1' },
+  { src: mountain2, alt: 'mountain2' },
+  { src: mountain3, alt: 'mountain3' },
 ]
 export default function Mountains() {
   const mountains = useRef(null)
@@ -133,7 +133,7 @@ export default function Mountains() {
             id={mountain.alt}
             loading="lazy"
             className="w-auto absolute max-h-[70vh] object-cover rounded-2xl"
-            src={mountain.url}
+            src={mountain.src}
             alt={mountain.alt}
           />
         )

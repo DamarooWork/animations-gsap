@@ -1,5 +1,5 @@
 interface IImage {
-  url: StaticImageData
+  src: StaticImageData
   alt: string
 }
 interface IBubble {

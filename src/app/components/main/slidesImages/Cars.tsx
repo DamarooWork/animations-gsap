@@ -14,11 +14,11 @@ import car4 from '@/../public/images/slidesImages/cars/4.jpg'
 import car5 from '@/../public/images/slidesImages/cars/5.jpg'
 
 const carsArr: IImage[] = [
-  { url: car1, alt: 'car1' },
-  { url: car2, alt: 'car2' },
-  { url: car3, alt: 'car3' },
-  { url: car4, alt: 'car4' },
-  { url: car5, alt: 'car5' },
+  { src: car1, alt: 'car1' },
+  { src: car2, alt: 'car2' },
+  { src: car3, alt: 'car3' },
+  { src: car4, alt: 'car4' },
+  { src: car5, alt: 'car5' },
 ]
 export default function Cars() {
   const cars = useRef(null)
@@ -131,7 +131,7 @@ export default function Cars() {
             className={`w-auto absolute ${
               i === 2 ? 'z-20' : i === 3 ? 'z-10' : ''
             } hover:z-50  max-w-[15vw]  max-h-[70vh] object-cover rounded-2xl`}
-            src={car.url}
+            src={car.src}
             alt={car.alt}
           />
         )
