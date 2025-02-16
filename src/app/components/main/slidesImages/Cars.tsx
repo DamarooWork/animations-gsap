@@ -22,6 +22,7 @@ const carsArr: IImage[] = [
 ]
 export default function Cars() {
   const cars = useRef(null)
+  const carsRefs = useRef<HTMLImageElement[]>([])
   useGSAP(
     () => {
       const tlCars = gsap.timeline({
@@ -88,6 +89,25 @@ export default function Cars() {
           ease: 'power2.inOut',
         }
       )
+      carsRefs.current.forEach((carNode, i) => {
+        tlCars.fromTo(
+          carNode,
+          { position: 'absolute' },
+          {
+            position: 'static',
+            duration: 1,
+            rotateZ: 0,
+            ease: 'power2.inOut',
+            maxWidth: () => window.innerWidth,
+            maxHeight: () => window.innerHeight,
+            width: () => window.innerWidth / carsRefs.current.length,
+            height: () => window.innerHeight,
+            translateX: 0,
+            borderRadius: 0,
+          },
+          i === 0 ? '>-0' : '>-1'
+        )
+      })
     },
     { scope: cars }
   )
@@ -100,10 +120,15 @@ export default function Cars() {
       {carsArr.map((car, i) => {
         return (
           <Image
+            ref={(node) => {
+              if (node) {
+                carsRefs.current[i] = node
+              }
+            }}
             key={car.alt}
             id={car.alt}
             loading="lazy"
-            className={`w-auto absolute ${
+            className={`car w-auto absolute ${
               i === 2 ? 'z-20' : i === 3 ? 'z-10' : ''
             } hover:z-50  max-w-[15vw]  max-h-[70vh] object-cover rounded-2xl`}
             src={car.url}

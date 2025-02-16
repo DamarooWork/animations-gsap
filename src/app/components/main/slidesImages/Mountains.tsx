@@ -36,7 +36,7 @@ export default function Mountains() {
         {
           scale: 1,
           opacity: 1,
-          duration: 1,
+          duration: 2,
           x: () => '-=' + window.innerWidth / 5,
           rotateZ: -30,
           ease: 'power2.inOut',
