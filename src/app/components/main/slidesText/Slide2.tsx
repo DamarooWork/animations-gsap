@@ -41,8 +41,16 @@ export default function Slide2() {
     switch (direction) {
       case 1:
         gsap.to(airplaneRef.current, {
-          top: () => window.innerHeight - airplaneRef.current?.width! - 16,
-          left: () => window.innerWidth - airplaneRef.current?.width! - 16,
+          top: () => {
+            if (airplaneRef.current)
+              return window.innerHeight - airplaneRef.current.width - 16
+            else return 0
+          },
+          left: () => {
+            if (airplaneRef.current)
+              return window.innerWidth - airplaneRef.current.width - 16
+            else return 0
+          },
           rotateZ: 20,
           duration: 2,
           rotateY: 0,
@@ -50,10 +58,13 @@ export default function Slide2() {
         })
         direction = 2
         break
-
       case 2:
         gsap.to(airplaneRef.current, {
-          top: () => window.innerHeight - airplaneRef.current?.width! - 16,
+          top: () => {
+            if (airplaneRef.current)
+              return window.innerHeight - airplaneRef.current.width - 16
+            else return 0
+          },
           left: 16,
           rotateY: 180,
           duration: 2,
@@ -61,11 +72,14 @@ export default function Slide2() {
         })
         direction = 3
         break
-
       case 3:
         gsap.to(airplaneRef.current, {
           top: '16px',
-          left: () => window.innerWidth - airplaneRef.current?.width! - 16,
+          left: () => {
+            if (airplaneRef.current)
+              return window.innerWidth - airplaneRef.current.width - 16
+            else return 0
+          },
           rotateZ: -20,
           rotateY: 0,
           duration: 2,
@@ -73,7 +87,6 @@ export default function Slide2() {
         })
         direction = 4
         break
-
       case 4:
         gsap.to(airplaneRef.current, {
           top: 16,
@@ -85,7 +98,6 @@ export default function Slide2() {
         })
         direction = 1
         break
-
       default:
         break
     }
