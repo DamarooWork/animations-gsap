@@ -41,8 +41,8 @@ export default function Slide2() {
     switch (direction) {
       case 1:
         gsap.to(airplaneRef.current, {
-          top: () => window.innerHeight * 0.8,
-          left: () => window.innerWidth * 0.8,
+          top: () => window.innerHeight - airplaneRef.current?.width! - 16,
+          left: () => window.innerWidth - airplaneRef.current?.width! - 16,
           rotateZ: 20,
           duration: 2,
           rotateY: 0,
@@ -53,8 +53,8 @@ export default function Slide2() {
 
       case 2:
         gsap.to(airplaneRef.current, {
-          top: () => window.innerHeight * 0.8,
-          left: '16px',
+          top: () => window.innerHeight - airplaneRef.current?.width! - 16,
+          left: 16,
           rotateY: 180,
           duration: 2,
           ease: 'power1.inOut',
@@ -65,7 +65,7 @@ export default function Slide2() {
       case 3:
         gsap.to(airplaneRef.current, {
           top: '16px',
-          left: () => window.innerWidth * 0.8,
+          left: () => window.innerWidth - airplaneRef.current?.width! - 16,
           rotateZ: -20,
           rotateY: 0,
           duration: 2,
@@ -76,8 +76,8 @@ export default function Slide2() {
 
       case 4:
         gsap.to(airplaneRef.current, {
-          top: '16px',
-          left: '16px',
+          top: 16,
+          left: 16,
           rotateZ: 20,
           rotateY: 180,
           duration: 2,
@@ -94,7 +94,7 @@ export default function Slide2() {
     <section
       ref={slide2}
       className="slide flex flex-col justify-center
-   items-center px-4 sm:px-32  min-w-[100vw] h-screen  bg-gradient-to-tl from-violet-300/60 to-violet-600/60"
+   items-center px-10 sm:px-32  min-w-[100vw] h-screen  bg-gradient-to-tl from-violet-300/60 to-violet-600/60"
     >
       <p className="text3 mb-[5vh]"></p>
       <p className="text4"></p>
