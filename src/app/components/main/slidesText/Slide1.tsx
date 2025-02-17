@@ -87,7 +87,7 @@ export default function Slide1() {
       />
       <Image
         ref={skateRef}
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-auto"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-auto"
         src={skate}
         alt="Skate icon"
       />

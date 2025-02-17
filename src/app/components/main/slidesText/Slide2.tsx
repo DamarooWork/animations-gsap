@@ -94,14 +94,14 @@ export default function Slide2() {
     <section
       ref={slide2}
       className="slide flex flex-col justify-center
-   items-center px-4 sm:px-20  min-w-[100vw] h-screen  bg-gradient-to-tl from-violet-300/60 to-violet-600/60"
+   items-center px-4 sm:px-32  min-w-[100vw] h-screen  bg-gradient-to-tl from-violet-300/60 to-violet-600/60"
     >
       <p className="text3 mb-[5vh]"></p>
       <p className="text4"></p>
       <Image
         onClick={handleBtnClick}
         ref={btnRef}
-        className="absolute top-8 left-1/2 w-10 sm:w-16 h-auto cursor-pointer transition-transform will-change-transform duration-500 hover:scale-110 active:scale-90 animate-pulse hover:animate-none z-[1001]"
+        className="absolute bottom-8 left-1/2 w-10 sm:w-16 h-auto cursor-pointer transition-transform will-change-transform duration-500 hover:scale-110 active:scale-90 animate-pulse hover:animate-none"
         src={btn}
         alt="button icon"
       />
