@@ -1,12 +1,11 @@
 'use client'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { TextPlugin } from 'gsap/TextPlugin'
-import { Flip } from 'gsap/Flip'
-gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin, Flip)
+gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin)
 
 import Image from 'next/image'
 import btn from '@/../public/icons/slidesText/slide2/btn.png'
@@ -39,7 +38,6 @@ export default function Slide2() {
     { scope: slide2 }
   )
   const handleBtnClick = () => {
-    const airplaneState = Flip.getState(airplaneRef.current)
     switch (direction) {
       case 1:
         gsap.to(airplaneRef.current, {
