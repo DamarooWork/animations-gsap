@@ -9,3 +9,8 @@ interface IBubble {
   width: string
   height: string
 }
+interface IStar {
+  id: number
+  top: string | number
+  left: string | number
+}
